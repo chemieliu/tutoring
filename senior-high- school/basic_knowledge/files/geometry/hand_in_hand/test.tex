@@ -1,0 +1,13 @@
+\usetikzlibrary{calc}
+
+\begin{tikzpicture}
+  \coordinate (A) at (3,4);
+  \coordinate (B) at (1,2);
+
+  % 相对坐标：A-B
+  \path let \p1 = (A), \p2 = (B) in
+    \pgfmathsetmacro{\dx}{\x1-\x2}
+    \pgfmathsetmacro{\dy}{\y1-\y2};
+
+  \node at (0,0) {相对坐标=(\dx,\dy)};
+\end{tikzpicture}

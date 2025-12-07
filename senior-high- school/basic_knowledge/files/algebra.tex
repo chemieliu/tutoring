@@ -1,0 +1,66 @@
+\documentclass[../Main.tex]{subfiles}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+% \setcounter{secnumdepth}{3} % 让三级标题有编号
+% \setcounter{tocdepth}{3}    % 目录显示到三级标题
+
+\begin{document}
+\chapter{Large Numbers}
+
+\intro{
+    主要介绍大数及其读写。
+}
+\section{知识}
+
+个（一）、十、百、千、万……亿，十亿，百亿，千亿都是\textbf{计数单位}，每相邻两个计数单位之间的进率都是十。把这些计数单位按照一定的顺序排列起来，它们所占的位置可作\textbf{数位}。（如下表）
+
+{
+\zihao{5}
+\begin{center}
+    \begin{tabular}{|c|*{12}{c|}}
+        \hline
+        数级   & \multicolumn{4}{c|}{亿级} & \multicolumn{4}{c|}{万级} & \multicolumn{4}{c|}{个级}                                                 \\
+        \hline
+        数位   & 千亿位                     & 百亿位                     & 十亿位                     & 亿位 & 千万位 & 百万位 & 十万位 & 万位 & 千位 & 百位 & 十位 & 个位 \\
+        \hline
+        计数数位 & 千亿                      & 百亿                      & 十亿                      & 亿  & 千万  & 百万  & 十万  & 万  & 千  & 百  & 十  & 个  \\
+        \hline
+    \end{tabular}
+\end{center}
+}
+
+
+\vspace{1em}
+\textbf{知识回眸}
+
+\vspace{1em}
+\textbf{经典重现}
+
+\textbf{例1} \quad 550808080 这个数中，两个 8 分别表示 8 个（\underline{\hspace{3em}}）和 8 个（\underline{\hspace{3em}}），两个 5 分别表示 5 个（\underline{\hspace{3em}}）和 5 个（\underline{\hspace{3em}}）。
+
+解：整数数位从右向左，每四位为一级，依次为个级，万级，亿级等。\\
+550808080 分级可划分为 55:0808:0800。\\
+从右起第一个 8 在百位，表示 8 个百；第二个 8 在十万位，表示 8 个十万；\\
+第一个 5 在千万位上，表示 5 个千万；第二个 5 在十亿位上，表示 5 个十亿。
+
+\vspace{1em}
+\textbf{例2} \quad 先分级，再读出下面各数。\\
+35000000 \quad 20220000 \quad 7807800 \quad 6000066 \quad 7800780 \quad 8080800
+
+
+
+
+
+
+
+
+
+
+
+\let\cleardoublepage\clearpage
+
+
+
+
+
+\end{document}
