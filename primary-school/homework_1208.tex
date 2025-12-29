@@ -1,0 +1,110 @@
+\documentclass[12pt]{article}
+\usepackage[UTF8]{ctex}  % 中文支持
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{tikz}
+
+\geometry{a4paper, margin=1in}
+
+% \title{Homework 1206}
+% \author{Liu}
+% \date{\today}
+
+\begin{document}
+
+% \maketitle
+
+
+\section*{Problem 1}
+已知一次函数 $y = ax - 3 - a$（其中 $a \ne 0$）。
+
+\begin{enumerate}
+    \item[(1)] 当 $y = -3$ 时，$x =$\underline{\hspace{2cm}}；
+    \item[(2)] 当 $-4 \leq y \leq -1$ 时，自变量 $x$ 的\textbf{负整数值}恰好有 $2$ 个，则 $a$ 的取值范围为\underline{\hspace{4cm}}。
+\end{enumerate}
+\section*{Problem 2}
+甲、乙两人骑自行车匀速同向行驶，乙在甲前面 $300\,\text{m}$ 处，同时出发去距离甲 $1200\,\text{m}$ 的目的地，甲的速度比乙快。设甲、乙之间的距离为 $y$（单位：米），乙行驶的时间为 $x$（单位：秒），$y$ 与 $x$ 之间的关系如图所示，则点 $C$ 的坐标为（\underline{\hspace{2cm}}）。
+
+\begin{itemize}
+    \item[A.] $(200,\ 160)$
+    \item[B.] $(200,\ 180)$
+    \item[C.] $(240,\ 160)$
+    \item[D.] $(240,\ 180)$
+\end{itemize}
+\begin{center}
+    \begin{tikzpicture}[scale=0.02]
+        % 坐标轴
+        \draw[->] (0,0) -- (330,0) node[right] {$x\ (\text{s})$};
+        \draw[->] (0,0) -- (0,350) node[above] {$y\ (\text{m})$};
+
+        % 标记点
+        \foreach \x in {  150,  300}
+        \draw[shift={(\x,0)}] (0,0) -- (0,3) node[below=3pt] {\x};
+        \foreach \y in {  300}
+        \draw[shift={(0,\y)}] (0,0) -- (3,0) node[left=3pt] {\y};
+
+        % 折线
+        \draw[thick] (0,300) node[right] {A} -- (150,0) node[above right] {B} -- (225,150) node[above] {C} -- (300,0) node[above right] {D};
+
+        % 原点
+        \filldraw (0,0) circle (2pt) node[below left] {O};
+        \filldraw (0,300) circle (2pt);
+        \filldraw (150,0) circle (2pt);
+        \filldraw (225,150) circle (2pt);
+        \filldraw (300,0) circle (2pt);
+    \end{tikzpicture}
+\end{center}
+
+\section*{Problem 2}
+
+\textbf{10.}
+如图，点 $B,\ C,\ D$ 在同一直线上，$\triangle DCE$ 沿 $CE$ 折叠，点 $D$ 恰好落在直角三角形 $\triangle ABC$ 的直角顶点 $A$ 处。若 $\angle D = 45^\circ$，$DE = 2$，则 $BD - AB$ 的值为（\underline{\hspace{2cm}}）。
+
+\begin{itemize}
+    \item[A.] $2$
+    \item[B.] $2\sqrt{2}$
+    \item[C.] $4$
+    \item[D.] $4\sqrt{2}$
+\end{itemize}
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[scale=1]
+        
+        % 1. 定义顶点坐标
+        % 假设 C 为原点，B, C, D 共线
+        \coordinate (B) at (-5, 0);
+        \coordinate (C) at (0, 0);
+        \coordinate (D) at (3, 0);
+        \coordinate (A) at (-1.8, 2.4); % 调整 A 的位置使其看起来像原图
+        \coordinate (E) at (1.1, 1.6);
+        
+        % 2. 绘制实线段
+        \draw (A) -- (B);  % AB
+        \draw (A) -- (C);  % AC
+        \draw (A) -- (E);  % AE
+        \draw (C) -- (E);  % CE
+        \draw (B) -- (C);  % BC (基线的一部分)
+        
+        % 3. 绘制虚线段 (dashed)
+        \draw[dashed] (C) -- (D);  % CD (基线的剩余部分)
+        \draw[dashed] (E) -- (D);  % ED
+        
+        % 4. 标注顶点
+        \node[above] at (A) {$A$};
+        \node[below left] at (B) {$B$};
+        \node[below] at (C) {$C$};
+        \node[below right] at (D) {$D$};
+        \node[above right] at (E) {$E$};
+        
+    \end{tikzpicture}
+    % \caption{几何图形示意图} % 如果需要添加图注，请取消注释
+\end{figure}
+
+
+\end{document}

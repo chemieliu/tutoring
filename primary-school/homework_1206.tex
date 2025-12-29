@@ -1,0 +1,55 @@
+\documentclass[12pt]{article}
+\usepackage[UTF8]{ctex}  % 中文支持
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{graphicx}
+
+\geometry{a4paper, margin=1in}
+
+% \title{Homework 1206}
+% \author{Liu}
+% \date{\today}
+
+\begin{document}
+
+% \maketitle
+
+\section*{Instructions}
+里面一些题目以后还会遇到，先有个简单认识就好。
+如果给的题目有不知道的知识点，能否借助家长或者网络自己去解答呢？
+
+\section*{Problem 1}
+\textbf{例题：}
+计算：
+
+
+\[
+    1 \times 2 + 2 \times 3 + 3 \times 4 + \cdots + 9 \times 10
+\]
+\textbf{解：} 观察每一项，可以发现：
+\[
+    \begin{aligned}
+        1 \times 2  & = \frac{1}{3}(1 \times 2 \times 3 - 0 \times 1 \times 2)    \\
+        2 \times 3  & = \frac{1}{3}(2 \times 3 \times 4 - 1 \times 2 \times 3)    \\
+        3 \times 4  & = \frac{1}{3}(3 \times 4 \times 5 - 2 \times 3 \times 4)    \\
+                    & \vdots                                                      \\
+        9 \times 10 & = \frac{1}{3}(9 \times 10 \times 11 - 8 \times 9 \times 10)
+    \end{aligned}
+\]
+\text{这里应用一个方法，错位相消}
+\[
+    \begin{aligned}
+         = \frac{1}{3}(9 \times 10 \times 11 - 0 \times 1 \times 2) & = \frac{1}{3}(990 - 0) \\
+            & = 330
+    \end{aligned}
+\]
+\section*{Problem 2}
+两个加数相加求和，如果一个加数增加0.4，另一个加数增加$\frac{3}{8}$,则和增加多少？
+
+\section*{Problem 3}
+一个三角形的面积是7.5$cm^2$，它的底是5cm，求它的高。
+
+\end{document}
