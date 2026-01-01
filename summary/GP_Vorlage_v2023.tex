@@ -1,0 +1,117 @@
+% Header: Here are all packages used and some additional definitions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[11pt,a4paper]{article}
+\usepackage[UTF8]{ctex}  % 中文支持
+\usepackage[margin=2.5cm]{geometry}
+\usepackage[onehalfspacing]{setspace}
+\usepackage{graphicx} % zum Einbinden von Graphiken
+\usepackage[breaklinks=true,colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref} % f. Referenzen
+\usepackage{amsmath,amsthm,amssymb} % Mathematik Umgebung 
+\usepackage{icomma} % Intelligentes Komma, das den richtigen Abstand zwischen Dezimalzahlen als auch in Formeln wählt.
+\usepackage[                ,english]{babel} % Deutsche Bezeichnungen bei Inhaltsangabe etc
+\usepackage[T1]{fontenc}    % andere Schriftsatzkodierung für richtige Silbentrennung bei Umlauten
+\usepackage[locale = DE,space-before-unit=true,per-mode = symbol]{siunitx} % Bessere Einheiten
+\usepackage{placeins} % Definiert den Befehl “\FloatBarrier”, der die Ausgabe der davor eingebundenen Bilder erzwingt, befor der Text weiter geht. (Mit vorsicht zu verwenden)
+\usepackage[natbib,abbreviate=true,doi=false,style=numeric-comp,giveninits=true,sorting=none]{biblatex} % Modernes Paket zur Erzeugung von Bibliografien (benötigt biber!)
+
+\addbibresource{MyBibliography.bib} % Ort der .bib Datei, die die Datenbank für Literatur/Referenzen enthält.
+
+\graphicspath{{Bilder/}}
+
+\DeclareSIUnit{\dBm}{dBm}
+\DeclareSIUnit[per-mode=reciprocal]\WN{\per\centi\meter}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%
+\title{2025工作总结}
+\author{Liu}
+\date{\today}
+\maketitle
+\vfill
+\renewcommand\abstractname{Abstract}
+\section*{\abstractname}
+\textit{2025年已过，回顾2025年，展望2026年。总结2025成功、失败的经验与教训，为2026更进一步而努力。做一个对家庭充满爱意、对生活充满热情、对事业充满激情的人。}\\
+\thispagestyle{empty}
+%
+%
+\tableofcontents
+\thispagestyle{empty}
+\cleardoublepage
+\pagenumbering{arabic}
+\newpage
+%
+%
+\section{Introduction}
+\label{sec:Einleitung}
+%
+\textit{2025年是我人生重要的一年，这一年是我家庭、事业、人生态度发生改变的一年、是我人生迈上新台阶的第一年。在2026年第一天，充分总结2025年、积极展望2026年。本着对天地的敬畏之心、对生活的积极态度、对未来的乐观展望，郑重写下本文，并以期形成常态化，每年都对上一年进行总结与展望。}\\
+
+%
+\section{2025年大事}
+\label{sec:Grundlagen}
+%
+\textit{主要记录2025年我人生与生活中的一些大事、心态变化、学习进展等。}\\
+\subsection{结婚}
+2025年，我与我的爱人在山东老家举办婚礼。在家人、亲朋好友的帮助下，我们的婚礼成功举办。结婚意味着我们有了一个小家庭，为小家庭努力奋斗，给我带来了无穷的动力。
+我坚信我们小家在杭州会越来越好！个人私生活部分不会过多介绍，这是我的性格决定的。
+\subsection{买车}
+买车其实在结婚之前，前面也有介绍，这辆车是广汽本田皓影插混。这辆车我前面多次发文介绍、并坦言她是我们小家的一个重要成员。这辆车是我与父亲亲自接回家、并按照山东习俗给她举行了一个庄重的仪式。
+我驾驶她把我老婆从娘家接到我家、她全程参与我的婚礼、并载着我与老婆从山东老家平安到达杭州。她陪我走过杭州大街小巷、助力我事业发展。我会珍惜我人生的第一辆车。
+\subsection{出国}
+我与我老婆第一次出国，第一站选择了新加坡。
+\subsection{MacBook}
+选择macbook pro是我本年做出的一个重要选择。现在看来这个选择无比正确，选择能够提升工作效率、提升工作质量的工具是十分必要的。
+有些东西苹果做的确实好，比如显示屏、操作系统、生态系统等。我本人还需要写代码，MacBook对我工作帮助很大。
+\subsection{iPhone }
+基于macbook pro的良好表现，我给我老婆也选择了苹果手机。不基于情绪、而是基于理性选择工具，这也是我2025年人生态度的一个改变。
+
+
+
+
+%
+\section{工作总结}
+\label{sec:ExpAufb}
+%
+\textit{2025年比2024年要好很多，我自身也提升很多。2025年的进展让我对2026年更有信心。}\\
+\subsection{小初高全覆盖}
+2025年，我实现了从小学、初中、高中的全覆盖教学。中考数学仍然是2025年的重点、奥数权重降低、高中权重适当提升。
+成功组建了几个小组教学、多年级混班教学、线上线下结合教学等多种形式。
+\subsection{不搞预付费}
+\section{Ergebnisse}
+\label{sec:Ergebnisse}
+%
+\textit{Was ist(sind) die gemessene Antwort(en) auf die Hauptfrage(n)?}\\
+Abbildung \ref{fig:examplfig} zeigt ein Beispiel für eine Abbildung in Haupttext.
+\begin{figure}[htb!]
+  \centering
+  \includegraphics[width=0.65\textwidth]{good_example_plot}
+  \caption{\label{fig:examplfig}Ein typischer Graph in einem Bericht. Im Bildunterschrift werden die wesentliche Informationen über den Graph gegeben.
+  }
+\end{figure}
+%
+\section{Schlussfolgerungen}
+\label{sec:Schlussf}
+%
+\textit{Was ist die Endantwort und soll ihr vertraut werden?  Wie hätte man den Versuch anders oder besser durchführen können?}\\
+Die Referenz~\cite{GP1StromSpannung} soll ein Beispiel sein, wie man ein Praktikums"=Skript zitieren sollte.
+%
+\input{Anhang} % Der Anhang ist in einer externen Datei "Anhang.tex" und wird hier in das Dokument eingefügt.
+
+\printbibliography[]
+\vfill
+\section*{Erklärung}
+
+Hiermit versichern wir, dass der vorliegende Bericht selbständig verfasst wurde und alle notwendigen Quellen und Referenzen angegeben sind.
+
+\begin{tabular}{@{}p{2.5in}p{2.5in}@{}}
+  \\[5\bigskipamount]
+  \dotfill  & \dotfill \\
+  Student 1 & Date     \\[5\bigskipamount]
+  \dotfill  & \dotfill \\
+  Student 2 & Date     \\
+  \centering
+\end{tabular}
+
+\end{document}

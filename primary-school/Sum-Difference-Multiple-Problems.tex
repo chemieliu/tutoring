@@ -1,0 +1,855 @@
+% Plantilla simple para tareas de la Licenciatura en Física
+% Fer Flores - Universidad de Guadalajara - Noviembre 2023
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-PREÁMBULO-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Paqueterías
+
+\documentclass{assignment}
+\usepackage[UTF8]{ctex}  % 中文支持
+\usepackage[pdftex]{graphicx} % FIGURAS
+\usepackage{xcolor}
+\definecolor{LightGray}{gray}{0.95}
+\usepackage{fancyvrb, minted} % CÓDIGO
+\usepackage[letterpaper, margin = 2.5cm]{geometry} % TAMAÑO DE PÁGINA Y MÁRGENES
+\usepackage[T1]{fontenc} % Importante para acentos automáticos y símbolos de escritura
+\usepackage[english]{babel} % Importante para Español
+\usepackage{amsmath, amsfonts, amssymb} % Ecuaciones, caracteres y símbolos especiales
+\usepackage{hyperref, url}  % Links y Hyperlinks en el documento
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage{titlesec}
+\usetikzlibrary{decorations.pathreplacing, calc} % 加载必要的库
+
+%-----------------------------------------ETIQUETAS--------------------------------------------
+
+\student{Liu}                             % NOMBRE
+\semester{Grade3}                                % SEMESTRE (202X A/B)
+\date{\today}                                   % Fecha (Modifica a DD/MM/AAAA)
+
+\courselabel{ONLINE}          % CLAVE Y MATERIA
+\exercisesheet{和差倍}{从基础到高级}     % NÚMERO Y TÍTULO DE LA TAREA
+
+\school{Yuhang}          % CARERA (Física, la mejor carrera)
+\university{Mr. Liu's class}         % LA PODEROSÍSIMA
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-DOCUMENTO-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%-----------------------------------------------------------------------------------------------
+\begin{problem}
+
+\section{简介}
+
+\noindent 这类问题通常围绕两个或多个未知量，通过它们的“和”、“差”或“倍数关系”来求解这些未知量。 \newline
+For example:The sum of two numbers is 36, and their difference is 12. What are the numbers? \newline
+
+
+\section{解决方法}
+\noindent 高年级与低年级的解题思路是不同的，本质上讲这两种方法是等价的。\newline 
+突破口在找到\textbf{等量关系}。
+\begin{enumerate}
+    \item 代数法（高年级）
+
+    \item 线段图法（低年级）
+
+
+\end{enumerate}
+
+\subsection{基础题型}
+
+\noindent 只需要应用简单加、减、乘或除运算即可
+
+\subsubsection{和}
+
+\noindent 小明有36个苹果，小红比小明多12个苹果。小红有多少个苹果？ \newline
+\textbf{解：}
+\begin{tikzpicture}[scale=0.8, >=stealth]
+    % 定义两个点
+    \coordinate (P1) at (0,0);
+    \coordinate (P2) at (3,0);
+    \coordinate (P3) at (0,1);
+    \coordinate (P4) at (3,1);
+    \coordinate (P5) at (4,0);
+    % 1. 在起点 (0,0) 处放置文字 (使用 'left' 定位)
+    % 首先定义起点 (0,0) 为一个节点 N1，并放置文字
+    \node (label1) at (0, 0) [left] {小红};
+    \node (label2) at (P3) [left] {小明};
+    % 然后从这个点开始画线段
+    \draw[ thick] (P1) -- (P2);
+    \draw[ thick] (P3) -- (P4);
+    \draw[dashed ,thick,red] (P2) -- (P5);
+    % \draw[decorate, decoration={brace, amplitude=7pt, mirror}] (P1) -- (P2)
+    % node[midway, below=8pt] {35}; % mirror 选项使大括号朝向P1和P2定义的路径的内部
+    \draw[decorate, decoration={brace, amplitude=5pt}] (P3) -- (P4)
+    node[midway, above=6pt] {36};
+    \draw[dashed] (0,0) -- ++(0, 0.5);
+    \draw[dashed] (3,0) -- ++(0, 0.5);
+    \draw[<->,thick] (0,0.3) -- (3,0.3) node[midway, above] { $36$};
+    \draw[dashed] (3,0) -- ++(0, 0.5);
+    \draw[dashed] (4,0) -- ++(0, 0.5);
+    \draw[<->,thick] (3,0.3) -- (4,0.3) node[midway, above] { $12$};
+    \draw[decorate, decoration={brace, amplitude=10pt, mirror}] (P1) -- (P5)
+    node[midway, below=8pt] {?}; % mirror 选项使大括号朝向P1和P2定义的路径的内部
+
+\end{tikzpicture}
+
+\vspace{0.5cm}
+36 + 12 = 48 \newline
+
+答：小红有48个苹果。\newline
+\subsubsection{差}
+
+\noindent 小明有36个苹果，小红比小明少12个苹果。小红有多少个苹果？ \newline
+\textbf{解：}
+\begin{tikzpicture}[scale=0.8, >=stealth]
+    % 定义两个点
+    \coordinate (P1) at (0,0);
+    \coordinate (P2) at (3,0);
+    \coordinate (P3) at (0,1);
+    \coordinate (P4) at (3,1);
+    \coordinate (P5) at (2,0);
+    % 1. 在起点 (0,0) 处放置文字 (使用 'left' 定位)
+    % 首先定义起点 (0,0) 为一个节点 N1，并放置文字
+    \node (label1) at (P1) [left] {小红};
+    \node (label2) at (P3) [left] {小明};
+    % 然后从这个点开始画线段
+    \draw[ thick] (P1) -- (P5);
+    \draw[ thick] (P3) -- (P4);
+    \draw[dashed ,thick,red] (P2) -- (P5);
+    % \draw[decorate, decoration={brace, amplitude=7pt, mirror}] (P1) -- (P2)
+    % node[midway, below=8pt] {35}; % mirror 选项使大括号朝向P1和P2定义的路径的内部
+    \draw[decorate, decoration={brace, amplitude=5pt}] (P3) -- (P4)
+    node[midway, above=6pt] {36};
+    \draw[dashed] (P1) -- ++(0, 0.5);
+    \draw[dashed] (3,0) -- ++(0, 0.5);
+    \draw[<->,thick] (0,0.3) -- (3,0.3) node[midway, above] { $36$};
+    \draw[dashed] (3,0) -- ++(0, -0.5);
+    \draw[dashed] (2,0) -- ++(0, -0.5);
+    \draw[<->,thick] (2,-0.3) -- (3,-0.3) node[midway, below] { $12$};
+    \draw[decorate, decoration={brace, amplitude=10pt, mirror}] (P1) -- (P5)
+    node[midway, below=8pt] {?}; % mirror 选项使大括号朝向P1和P2定义的路径的内部
+
+\end{tikzpicture}
+
+\vspace{0.5cm}
+36 - 12 = 24 \newline
+
+答：小红有24个苹果。\newline
+
+\subsubsection{倍}
+
+\noindent \textbf{\textcolor{red}{乘：}}小明有36个苹果，小红苹果数量是小明的3倍。小红有多少个苹果？ \newline
+\textbf{解：}
+\begin{tikzpicture}[scale=0.8, >=stealth]
+    % 定义两个点
+    \coordinate (P1) at (0,0);
+    \coordinate (P2) at (3,0);
+    \coordinate (P3) at (0,1);
+    \coordinate (P4) at (3,1);
+    \coordinate (P5) at (9,0);
+    \coordinate (P6) at (6,0);
+    % 1. 在起点 (0,0) 处放置文字 (使用 'left' 定位)
+    % 首先定义起点 (0,0) 为一个节点 N1，并放置文字
+    \node (label1) at (P1) [left] {小红};
+    \node (label2) at (P3) [left] {小明};
+    % 然后从这个点开始画线段
+    \draw[ thick] (P1) -- (P2);
+    \draw[ thick] (P3) -- (P4);
+    \draw[thick,red] (P1) -- (P5);
+    % \draw[decorate, decoration={brace, amplitude=7pt, mirror}] (P1) -- (P2)
+    % node[midway, below=8pt] {35}; % mirror 选项使大括号朝向P1和P2定义的路径的内部
+    \draw[decorate, decoration={brace, amplitude=5pt}] (P3) -- (P4)
+    node[midway, above=6pt] {36};
+
+    \draw[dashed] (P1) -- ++(0, 0.5);
+    \draw[dashed] (3,0) -- ++(0, 0.5);
+    \draw[<->,thick] (0,0.3) -- (3,0.3) node[midway, above] { $36$};
+    \draw[dashed] (P1) -- ++(0, 0.5);
+    \draw[dashed] (P6) -- ++(0, 0.5);
+    \draw[dashed] (P5) -- ++(0, 0.5);
+    \draw[<->,thick] (0,0.3) -- (3,0.3) node[midway, above] { $36$};
+    \draw[<->,thick] (3,0.3) -- (6,0.3) node[midway, above] { $36$};
+    \draw[<->,thick] (6,0.3) -- (9,0.3) node[midway, above] { $36$};
+    \draw[decorate, decoration={brace, amplitude=10pt, mirror}] (P1) -- (P5)
+    node[midway, below=8pt] {?}; % mirror 选项使大括号朝向P1和P2定义的路径的内部
+
+\end{tikzpicture}
+
+\vspace{0.5cm}
+$36\times3$  = 108 \newline
+
+答：小红有108个苹果。\newline
+\newline
+\noindent \textbf{\textcolor{red}{除：}} 小明有36个苹果，小明苹果数量是小红的3倍。小红有多少个苹果？ \newline
+\textbf{解：}
+\begin{tikzpicture}[scale=0.8, >=stealth]
+    % 定义两个点
+    \coordinate (P1) at (0,0);
+    \coordinate (P2) at (3,0);
+    \coordinate (P3) at (0,1);
+    \coordinate (P4) at (3,1);
+    \coordinate (P5) at (1,0);
+    \coordinate (P6) at (2,0);
+    % 1. 在起点 (0,0) 处放置文字 (使用 'left' 定位)
+    % 首先定义起点 (0,0) 为一个节点 N1，并放置文字
+    \node (label1) at (P1) [left] {小红};
+    \node (label2) at (P3) [left] {小明};
+    % 然后从这个点开始画线段
+    \draw[ thick] (P1) -- (P2);
+    \draw[ thick] (P3) -- (P4);
+    \draw[thick,red] (P1) -- (P5);
+    % \draw[decorate, decoration={brace, amplitude=7pt, mirror}] (P1) -- (P2)
+    % node[midway, below=8pt] {35}; % mirror 选项使大括号朝向P1和P2定义的路径的内部
+    \draw[decorate, decoration={brace, amplitude=5pt}] (P3) -- (P4)
+    node[midway, above=6pt] {36};
+
+    \draw[dashed] (P1) -- ++(0, 0.5);
+    \draw[dashed] (3,0) -- ++(0, 0.5);
+    \draw[<->,thick] (0,0.3) -- (3,0.3) node[midway, above] { $36$};
+    \draw[dashed] (P1) -- ++(0, 0.5);
+    \draw[dashed] (P6) -- ++(0, 0.2);
+    \draw[dashed] (P5) -- ++(0, 0.2);
+    \draw[<->,thick] (0,0.3) -- (3,0.3) node[midway, above] { $36$};
+
+    \draw[decorate, decoration={brace, amplitude=10pt, mirror}] (P1) -- (P5)
+    node[midway, below=8pt] {?}; % mirror 选项使大括号朝向P1和P2定义的路径的内部
+
+\end{tikzpicture}
+
+\vspace{0.5cm}
+$36\div3$  = 12 \newline
+
+答：小红有12个苹果。\newline
+
+\noindent 注意：倍数关系中，乘法和除法是互为逆运算的。\newline
+% \vspace{0.5cm}
+\begin{enumerate}
+    \item 认真读题
+
+    \item 认真计算
+
+    \item 认真作答
+\end{enumerate}
+\subsection{提升题型}
+\noindent 这里可以使用代数法或者线段图法来解决问题，四五年级以后推荐使用代数法。
+\subsubsection{和倍}
+\begin{itemize}
+    \item Problem 1
+          \newline
+          \noindent 小明和小红一共有36个苹果，小红苹果数量是小明的3倍。小红有多少个苹果？ \newline
+          \textbf{解：}
+          \begin{tikzpicture}[scale=0.8, >=stealth]
+              % 定义两个点
+              \coordinate (P1) at (0,0);
+              \coordinate (P2) at (3,0);
+              \coordinate (P3) at (0,1);
+              \coordinate (P4) at (3,1);
+              \coordinate (P5) at (9,0);
+              \coordinate (P6) at (6,0);
+              % 1. 在起点 (0,0) 处放置文字 (使用 'left' 定位)
+              % 首先定义起点 (0,0) 为一个节点 N1，并放置文字
+              \node (label1) at (P1) [left] {小红};
+              \node (label2) at (P3) [left] {小明};
+              \node (label2) at (0,-1) [left] {小明+小红};
+              % 然后从这个点开始画线段
+              
+              \draw[ thick] (P3) -- (P4);
+              \draw[thick,red] (P1) -- (P5);
+        
+              \draw[thick] (0,-1) -- (3,-1);
+              \draw[thick,red] (3,-1) -- (12,-1);
+              % \draw[decorate, decoration={brace, amplitude=7pt, mirror}] (P1) -- (P2)
+              % node[midway, below=8pt] {35}; % mirror 选项使大括号朝向P1和P2定义的路径的内部
+              \draw[decorate, decoration={brace, amplitude=5pt}] (P3) -- (P4)
+              node[midway, above=6pt] {x};
+              \draw[decorate, decoration={brace, amplitude=5pt}] (9.5,2) -- (9.5,0)
+              node[midway, right=6pt] {36};
+
+              \draw[dashed] (P1) -- ++(0, 0.5);
+              \draw[dashed] (3,0) -- ++(0, 0.5);
+
+              \draw[dashed] (P1) -- ++(0, 0.5);
+              \draw[dashed] (P6) -- ++(0, 0.5);
+              \draw[dashed] (P5) -- ++(0, 0.5);
+              % \draw[<->,thick] (0,0.3) -- (3,0.3) node[midway, above] { ?};
+              % \draw[<->,thick] (3,0.3) -- (6,0.3) node[midway, above] { ?};
+              % \draw[<->,thick] (6,0.3) -- (9,0.3) node[midway, above] { ?};
+              \draw[dashed] (0,-1) -- ++(0, 0.5);
+              \draw[dashed] (3,-1) -- ++(0, 0.5);
+              \draw[dashed] (6,-1) -- ++(0, 0.5);
+              \draw[dashed] (9,-1) -- ++(0, 0.5);
+              \draw[dashed] (12,-1) -- ++(0, 0.5);
+              \draw[decorate, decoration={brace, amplitude=10pt}] (12,-1) -- (0,-1)
+              node[midway, below=8pt] {36};
+
+          \end{tikzpicture}
+
+          \vspace{0.5cm}
+
+          $3$ + 1 = 4 \newline
+          \indent $36\div4$  = 9(个) \newline
+          \indent $3\times9$  = 27(个) \newline
+
+          答：小红有27个苹果。\newline
+          \textbf{列方程：} \newline
+          \indent 设小明有x个苹果，则小红有3x个苹果。\newline
+          \indent 根据题意可得：x + 3x = 36 \newline
+          \indent 4x = 36 \newline
+          \indent x = 9 \newline
+          \indent 小红有3x = 27个苹果。\newline
+
+    \item Problem 2
+          \newline
+          \noindent 小明和小红一共有30个苹果，小红苹果数量比小明的3倍少两个。小红有多少个苹果？ \newline
+          \textbf{解：}
+          \begin{tikzpicture}[scale=0.8, >=stealth]
+              % 定义两个点
+              \coordinate (P1) at (0,0);
+              \coordinate (P2) at (3,0);
+              \coordinate (P3) at (0,1);
+              \coordinate (P4) at (3,1);
+              \coordinate (P5) at (9,0);
+              \coordinate (P7) at (8,0);
+              \coordinate (P6) at (6,0);
+              % 1. 在起点 (0,0) 处放置文字 (使用 'left' 定位)
+              % 首先定义起点 (0,0) 为一个节点 N1，并放置文字
+              \node (label1) at (P1) [left] {小红};
+              \node (label2) at (P3) [left] {小明};
+              \node (label2) at (0,-1) [left] {小明+小红};
+              % 然后从这个点开始画线段
+              \draw[ thick] (P1) -- (P2);
+              \draw[ thick] (P3) -- (P4);
+              \draw[dashed, thick] (P5) -- (P7);
+              \draw[thick,red] (P1) -- (P7);
+              \draw[thick,red] (0,-1) -- (11,-1);
+              \draw[thick,dashed] (11,-1) -- (12,-1);
+              % \draw[decorate, decoration={brace, amplitude=7pt, mirror}] (P1) -- (P2)
+              % node[midway, below=8pt] {35}; % mirror 选项使大括号朝向P1和P2定义的路径的内部
+              \draw[decorate, decoration={brace, amplitude=5pt}] (P3) -- (P4)
+              node[midway, above=6pt] {$x$};
+              \draw[decorate, decoration={brace, amplitude=5pt}] (9.5,2) -- (9.5,0)
+              node[midway, right=6pt] {30};
+
+              \draw[dashed] (P1) -- ++(0, 0.5);
+              \draw[dashed] (3,0) -- ++(0, 0.5);
+
+              \draw[dashed] (P1) -- ++(0, 0.5);
+              \draw[dashed] (P6) -- ++(0, 0.5);
+              \draw[dashed] (P5) -- ++(0, 0.5);
+              \draw[dashed] (P7) -- ++(0, 0.5);
+              % \draw[<->,thick] (0,0.3) -- (3,0.3) node[midway, above] { ?};
+              % \draw[<->,thick] (3,0.3) -- (6,0.3) node[midway, above] { ?};
+              % \draw[<->,thick] (6,0.3) -- (9,0.3) node[midway, above] { ?};
+              \draw[dashed] (0,-1) -- ++(0, 0.5);
+              \draw[dashed] (3,-1) -- ++(0, 0.3);
+              \draw[dashed] (6,-1) -- ++(0, 0.3);
+              \draw[dashed] (9,-1) -- ++(0, 0.3);
+              \draw[dashed] (12,-1) -- ++(0, 0.5);
+              \draw[dashed] (11,-1) -- ++(0, 0.3);
+              \draw[decorate, decoration={brace, amplitude=10pt}] (11,-1) -- (0,-1)
+              node[midway, below=8pt] {30};
+              \draw[<->,thick] (0,-0.7) -- (12,-0.7) node[midway, above] { $4x$};
+              \draw[decorate, decoration={brace, amplitude=10pt}] (12,-1) -- (11,-1)
+              node[midway, below=8pt] {2};
+
+          \end{tikzpicture}
+
+          \vspace{0.5cm}
+
+          $30$ + 2 = 32 \newline
+          \indent 1 + 3 = 4 \newline
+          \indent $32\div4$  = 8(个) \newline
+          \indent $3\times8$ - 2 = 22(个) \newline
+          答：小红有22个苹果。\newline
+          \textbf{列方程：} \newline
+          \indent 设小明有x个苹果，则小红有3x-2个苹果。\newline
+          \indent 根据题意可得：x + (3x-2) = 30 \newline
+          \indent 4x = 32 \newline
+          \indent x = 8 \newline
+          \indent 小红有3x-2 = 22个苹果。\newline
+
+    \item Problem 3
+          \newline
+          \noindent 小明和小红共有37张卡片，其中小明比小红的6倍多2张，那么小明有几张 \newline
+          \textbf{解：}
+          \begin{tikzpicture}[scale=0.8, >=stealth]
+              % 定义两个点
+              \coordinate (P1) at (0,0);
+              \coordinate (P2) at (1,0);
+              \coordinate (P3) at (0,1);
+              \coordinate (P4) at (1,1);
+              \coordinate (P5) at (2,0);
+              \coordinate (P6) at (3,0);
+              \coordinate (P7) at (4,0);
+              \coordinate (P8) at (5,0);
+              \coordinate (P9) at (6,0);
+              \coordinate (P10) at (6.5,0);
+
+              % 1. 在起点 (0,0) 处放置文字 (使用 'left' 定位)
+              % 首先定义起点 (0,0) 为一个节点 N1，并放置文字
+              \node (label1) at (P1) [left] {小明};
+              \node (label2) at (P3) [left] {小红};
+              \node (label2) at (0,-1) [left] {小明+小红};
+              % 然后从这个点开始画线段
+            %   \draw[ thick] (P1) -- (P10);
+              \draw[ thick] (P3) -- (P4);
+              \draw[thick,red] (P1) -- (P10);
+              \draw[thick] (0,-1) -- (1,-1);
+              \draw[thick,red] (1,-1) -- (7.5,-1);
+              % \draw[decorate, decoration={brace, amplitude=7pt, mirror}] (P1) -- (P2)
+              % node[midway, below=8pt] {35}; % mirror 选项使大括号朝向P1和P2定义的路径的内部
+              \draw[decorate, decoration={brace, amplitude=5pt}] (P3) -- (P4)
+              node[midway, above=6pt] {$x$};
+              \draw[decorate, decoration={brace, amplitude=5pt}] (8,2) -- (8,0)
+              node[midway, right=6pt] {37};
+
+
+
+              \draw[dashed] (P1) -- ++(0, 0.3);
+              \draw[dashed] (P2) -- ++(0, 0.3);
+              \draw[dashed] (P6) -- ++(0, 0.3);
+              \draw[dashed] (P7) -- ++(0, 0.3);
+              \draw[dashed] (P8) -- ++(0, 0.3);
+              \draw[dashed] (P9) -- ++(0, 0.3);
+              \draw[dashed] (P10) -- ++(0, 0.3);
+              \draw[dashed] (P5) -- ++(0, 0.3);
+              \draw[decorate, decoration={brace, amplitude=12pt}] (P1) -- (P9)
+              node[midway, above=9pt] {$6x$};
+              \draw[decorate, decoration={brace, amplitude=10pt}] (P9) -- (P10)
+              node[midway, above=8pt] {2};
+              % \draw[<->,thick] (0,0.3) -- (3,0.3) node[midway, above] { ?};
+              % \draw[<->,thick] (3,0.3) -- (6,0.3) node[midway, above] { ?};
+              % \draw[<->,thick] (6,0.3) -- (9,0.3) node[midway, above] { ?};
+              \draw[dashed] (0,-1) -- ++(0, 0.5);
+              \draw[dashed] (1,-1) -- ++(0, 0.5);
+              \draw[dashed] (2,-1) -- ++(0, 0.5);
+              \draw[dashed] (3,-1) -- ++(0, 0.5);
+              \draw[dashed] (4,-1) -- ++(0, 0.5);
+              \draw[dashed] (5,-1) -- ++(0, 0.5);
+              \draw[dashed] (6,-1) -- ++(0, 0.5);
+              \draw[dashed] (7,-1) -- ++(0, 0.5);
+              \draw[dashed] (7.5,-1) -- ++(0, 0.5);
+              \draw[decorate, decoration={brace, amplitude=10pt}] (7.5,-1) -- (0,-1)
+              node[midway, below=8pt] {37};
+
+
+          \end{tikzpicture}
+          \vspace{0.5cm}
+
+          $37$ - 2 = 35(个) \newline
+          \indent $6$ + 1  = 7 \newline
+          \indent $35\div7$  = 5(个) \newline
+          \indent $5\times6$ + 2  = 32(个) \newline
+          答：小明有32张。\newline
+          \newline
+          \textbf{列方程：} \newline
+          \indent 设小红有x张，则小红有6x+2个苹果。\newline
+          \indent 根据题意可得：x + 6x+2 = 37 \newline
+          \indent 7x = 35 \newline
+          \indent x = 5 \newline
+          \indent 小明有6x+2 = 32。\newline
+    \item Problem 4
+          \newline
+          \noindent 小明和小红共有37张卡片，其中小明比小红多3张，那么小明有几张 \newline
+          \textbf{解：}
+          \begin{tikzpicture}[scale=0.8, >=stealth]
+              % 定义两个点
+              \coordinate (P1) at (0,0);
+              \coordinate (P2) at (1,0);
+              \coordinate (P3) at (0,1);
+              \coordinate (P4) at (4,1);
+
+
+
+
+              \coordinate (P9) at (4,0);
+              \coordinate (P10) at (5,0);
+
+              % 1. 在起点 (0,0) 处放置文字 (使用 'left' 定位)
+              % 首先定义起点 (0,0) 为一个节点 N1，并放置文字
+              \node (label1) at (P1) [left] {小明};
+              \node (label2) at (P3) [left] {小红};
+              \node (label2) at (0,-1) [left] {小明+小红};
+              % 然后从这个点开始画线段
+              \draw[ thick] (P1) -- (P10);
+              \draw[ thick] (P3) -- (P4);
+
+              \draw[thick,red] (0,-1) -- (9,-1);
+              % \draw[decorate, decoration={brace, amplitude=7pt, mirror}] (P1) -- (P2)
+              % node[midway, below=8pt] {35}; % mirror 选项使大括号朝向P1和P2定义的路径的内部
+              \draw[decorate, decoration={brace, amplitude=5pt}] (P3) -- (P4)
+              node[midway, above=6pt] {$x$};
+              \draw[decorate, decoration={brace, amplitude=5pt}] (8,2) -- (8,0)
+              node[midway, right=6pt] {37};
+
+
+
+              \draw[dashed] (P1) -- ++(0, 0.3);
+
+
+
+
+              \draw[dashed] (P9) -- ++(0, 0.3);
+              \draw[dashed] (P10) -- ++(0, 0.3);
+
+              \draw[decorate, decoration={brace, amplitude=12pt}] (P1) -- (P9)
+              node[midway, above=9pt] {$x$};
+              \draw[decorate, decoration={brace, amplitude=10pt}] (P9) -- (P10)
+              node[midway, above=8pt] {3};
+              % \draw[<->,thick] (0,0.3) -- (3,0.3) node[midway, above] { ?};
+              % \draw[<->,thick] (3,0.3) -- (6,0.3) node[midway, above] { ?};
+              % \draw[<->,thick] (6,0.3) -- (9,0.3) node[midway, above] { ?};
+              \draw[dashed] (0,-1) -- ++(0, 0.5);
+
+
+              \draw[dashed] (4,-1) -- ++(0, 0.5);
+
+              \draw[dashed] (8,-1) -- ++(0, 0.5);
+
+              \draw[dashed] (9,-1) -- ++(0, 0.5);
+              \draw[decorate, decoration={brace, amplitude=10pt}] (9,-1) -- (0,-1)
+              node[midway, below=8pt] {37};
+              \draw[<->,thick] (0,-0.7) -- (8,-0.7) node[midway, above] { $2x$};
+              \draw[<->,thick] (9,-0.7) -- (8,-0.7) node[midway, above] { 3};
+
+          \end{tikzpicture}
+          \vspace{0.5cm}
+
+
+          $37$ - 3 = 34(个) \newline
+          \indent $1$ + 1  = 2 \newline
+          \indent $34\div2$  = 17(个) \newline
+          \indent $17$ + 3  = 20(个) \newline
+          答：小明有20个。\newline
+          \newline
+          \textbf{列方程：} \newline
+          \indent 设小红有$x$张，则小红有$x$+3个苹果。\newline
+          \indent 根据题意可得：$x$ + ($x$+3) = 37 \newline
+          \indent $2x$ = 34 \newline
+          \indent $x$ = 17 \newline
+          \indent 小明有$x$+3 = 20。\newline
+    \item Problem 5
+          \newline
+          \noindent 小明和小红共有37张卡片，其中小明比小红少3张，那么小明有几张 \newline
+          \textbf{解：}
+          \begin{tikzpicture}[scale=0.8, >=stealth]
+              % 定义两个点
+              \coordinate (P1) at (0,0);
+              \coordinate (P2) at (1,0);
+              \coordinate (P3) at (0,1);
+              \coordinate (P4) at (4,1);
+
+
+
+
+              \coordinate (P9) at (4,0);
+              \coordinate (P10) at (3,0);
+
+              % 1. 在起点 (0,0) 处放置文字 (使用 'left' 定位)
+              % 首先定义起点 (0,0) 为一个节点 N1，并放置文字
+              \node (label1) at (P1) [left] {小明};
+              \node (label2) at (P3) [left] {小红};
+              \node (label2) at (0,-1) [left] {小明+小红};
+              % 然后从这个点开始画线段
+              \draw[ thick] (P1) -- (P10);
+              \draw[dashed, thick] (P10) -- (P9);
+              \draw[ thick] (P3) -- (P4);
+
+              \draw[thick,red] (0,-1) -- (7,-1);
+              \draw[thick,dashed] (8,-1) -- (7,-1);
+              % \draw[decorate, decoration={brace, amplitude=7pt, mirror}] (P1) -- (P2)
+              % node[midway, below=8pt] {35}; % mirror 选项使大括号朝向P1和P2定义的路径的内部
+              \draw[decorate, decoration={brace, amplitude=5pt}] (P3) -- (P4)
+              node[midway, above=6pt] {$x$};
+              \draw[decorate, decoration={brace, amplitude=5pt}] (8,2) -- (8,0)
+              node[midway, right=6pt] {37};
+
+
+
+              \draw[dashed] (P1) -- ++(0, 0.3);
+
+
+
+
+              \draw[dashed] (P9) -- ++(0, 0.3);
+              \draw[dashed] (P10) -- ++(0, 0.3);
+
+              \draw[decorate, decoration={brace, amplitude=12pt}] (P1) -- (P10)
+              node[midway, above=9pt] {$x$-3};
+              %   \draw[decorate, decoration={brace, amplitude=10pt}] (P9) -- (P10)
+              %   node[midway, above=8pt] {3};
+              % \draw[<->,thick] (0,0.3) -- (3,0.3) node[midway, above] { ?};
+              % \draw[<->,thick] (3,0.3) -- (6,0.3) node[midway, above] { ?};
+              % \draw[<->,thick] (6,0.3) -- (9,0.3) node[midway, above] { ?};
+              \draw[dashed] (0,-1) -- ++(0, 0.5);
+
+
+              \draw[dashed] (4,-1) -- ++(0, 0.5);
+
+              \draw[dashed] (8,-1) -- ++(0, 0.5);
+
+
+              \draw[decorate, decoration={brace, amplitude=10pt}] (7,-1) -- (0,-1)
+              node[midway, below=8pt] {37};
+              \draw[<->,thick] (0,-0.7) -- (8,-0.7) node[midway, above] { $2x$};
+
+              \draw[decorate, decoration={brace, amplitude=10pt}] (8,-1) -- (7,-1)
+              node[midway, below=8pt] {3};
+
+          \end{tikzpicture}
+          \vspace{0.5cm}
+
+
+          $37$ + 3 = 40(个) \newline
+          \indent $1$ + 1  = 2 \newline
+          \indent $40\div2$  = 20(个) \newline
+          \indent $20$ - 3  = 17(个) \newline
+          答：小明有17个。\newline
+          \newline
+          \textbf{列方程：} \newline
+          \indent 设小红有$x$张，则小红有$x$-3个苹果。\newline
+          \indent 根据题意可得：$x$ + ($x$-3) = 37 \newline
+          \indent $2x$ = 40 \newline
+          \indent $x$ = 20 \newline
+          \indent 小明有$x$-3 = 17。\newline
+
+          \textbf{后面两个题目其实本质上与前两个是一样的，只是1倍。}
+\end{itemize}
+
+\subsubsection{差倍}
+
+\begin{itemize}
+    \item Problem 1
+          \newline
+          \noindent 小红比小明多36个苹果，小红苹果数量是小明的3倍。小红有多少个苹果？ \newline
+          \textbf{解：}
+          \begin{tikzpicture}[scale=0.8, >=stealth]
+              % 定义两个点
+              \coordinate (P1) at (0,0);
+              \coordinate (P2) at (3,0);
+              \coordinate (P3) at (0,1);
+              \coordinate (P4) at (3,1);
+              \coordinate (P5) at (9,0);
+              \coordinate (P6) at (6,0);
+              % 1. 在起点 (0,0) 处放置文字 (使用 'left' 定位)
+              % 首先定义起点 (0,0) 为一个节点 N1，并放置文字
+              \node (label1) at (P1) [left] {小红};
+              \node (label2) at (P3) [left] {小明};
+              \node (label2) at (0,-1) [left] {小红-小明};
+              % 然后从这个点开始画线段
+              \draw[ thick] (P1) -- (P2);
+              \draw[ thick] (P3) -- (P4);
+              \draw[thick,red] (P1) -- (P5);
+              \draw[thick,red] (0,-1) -- (6,-1);
+              % \draw[decorate, decoration={brace, amplitude=7pt, mirror}] (P1) -- (P2)
+              % node[midway, below=8pt] {35}; % mirror 选项使大括号朝向P1和P2定义的路径的内部
+              \draw[decorate, decoration={brace, amplitude=5pt}] (P3) -- (P4)
+              node[midway, above=6pt] {x};
+              \draw[decorate, decoration={brace, amplitude=5pt}] (3,0.5) -- (9,0.5)
+              node[midway, right=6pt] {36};
+
+              \draw[dashed] (P1) -- ++(0, 0.5);
+              \draw[dashed] (3,0) -- ++(0, 0.5);
+
+              \draw[dashed] (P1) -- ++(0, 0.5);
+              \draw[dashed] (P6) -- ++(0, 0.5);
+              \draw[dashed] (P5) -- ++(0, 0.5);
+              % \draw[<->,thick] (0,0.3) -- (3,0.3) node[midway, above] { ?};
+              % \draw[<->,thick] (3,0.3) -- (6,0.3) node[midway, above] { ?};
+              % \draw[<->,thick] (6,0.3) -- (9,0.3) node[midway, above] { ?};
+              \draw[dashed] (0,-1) -- ++(0, 0.5);
+              \draw[dashed] (3,-1) -- ++(0, 0.5);
+              \draw[dashed] (6,-1) -- ++(0, 0.5);
+
+
+              \draw[decorate, decoration={brace, amplitude=10pt}] (6,-1) -- (0,-1)
+              node[midway, below=8pt] {36};
+
+          \end{tikzpicture}
+
+          \vspace{0.5cm}
+
+          $3$ - 1 = 2 \newline
+          \indent $36\div2$  = 18(个) \newline
+          \indent $3\times18$  = 54(个) \newline
+
+          答：小红有54个苹果。\newline
+          \textbf{列方程：} \newline
+          \indent 设小明有$x$个苹果，则小红有$3x$个苹果。\newline
+          \indent 根据题意可得：$3x$ - $x$ = 36 \newline
+          \indent $2x$ = 36 \newline
+          \indent $x$ = 918 \newline
+          \indent 小红有$3x$ = 54个苹果。\newline
+    \item Problem 2
+          \newline
+          \noindent 小红比小明多25个苹果，小红苹果个数比小明的三倍多5个。小红有多少个苹果？ \newline
+          \textbf{解：}
+          \begin{tikzpicture}[scale=0.8, >=stealth]
+              % 定义两个点
+              \coordinate (P1) at (0,0);
+              \coordinate (P2) at (3,0);
+              \coordinate (P3) at (0,1);
+              \coordinate (P4) at (3,1);
+              \coordinate (P5) at (9,0);
+              \coordinate (P6) at (6,0);
+              \coordinate (P7) at (10,0);
+              % 1. 在起点 (0,0) 处放置文字 (使用 'left' 定位)
+              % 首先定义起点 (0,0) 为一个节点 N1，并放置文字
+              \node (label1) at (P1) [left] {小红};
+              \node (label2) at (P3) [left] {小明};
+              \node (label2) at (0,-1) [left] {小红-小明};
+              % 然后从这个点开始画线段
+              \draw[ thick] (P1) -- (P2);
+              \draw[ thick] (P3) -- (P4);
+              \draw[thick,red] (P1) -- (P7);
+              \draw[thick,red] (0,-1) -- (7,-1);
+              % \draw[decorate, decoration={brace, amplitude=7pt, mirror}] (P1) -- (P2)
+              % node[midway, below=8pt] {35}; % mirror 选项使大括号朝向P1和P2定义的路径的内部
+              \draw[decorate, decoration={brace, amplitude=5pt}] (P3) -- (P4)
+              node[midway, above=6pt] {$x$};
+              \draw[decorate, decoration={brace, amplitude=5pt}] (0,0.5) -- (9,0.5)
+              node[midway, above=6pt] {$3x$};
+              \draw[decorate, decoration={brace, amplitude=5pt}] (9,0.5) -- (10,0.5)
+              node[midway, above=6pt] {5};
+
+              \draw[dashed] (P1) -- ++(0, 0.5);
+              \draw[dashed] (3,0) -- ++(0, 0.5);
+
+              \draw[dashed] (P1) -- ++(0, 0.5);
+              \draw[dashed] (P6) -- ++(0, 0.5);
+              \draw[dashed] (P5) -- ++(0, 0.5);
+              \draw[dashed] (P7) -- ++(0, 0.5);
+              % \draw[<->,thick] (0,0.3) -- (3,0.3) node[midway, above] { ?};
+              % \draw[<->,thick] (3,0.3) -- (6,0.3) node[midway, above] { ?};
+              % \draw[<->,thick] (6,0.3) -- (9,0.3) node[midway, above] { ?};
+              \draw[dashed] (0,-1) -- ++(0, 0.5);
+              \draw[dashed] (3,-1) -- ++(0, 0.5);
+              \draw[dashed] (6,-1) -- ++(0, 0.5);
+              \draw[dashed] (7,-1) -- ++(0, 0.5);
+
+
+              \draw[decorate, decoration={brace, amplitude=10pt}] (7,-1) -- (0,-1)
+              node[midway, below=8pt] {25};
+
+          \end{tikzpicture}
+
+          \vspace{0.5cm}
+
+          $3$ - 1 = 2 \newline
+          $25$ - 5 = 20 \newline
+          \indent $20\div2$  = 10(个) \newline
+          \indent $3\times10$ + 5  = 35(个) \newline
+
+          答：小红有35个苹果。\newline
+          \textbf{列方程：} \newline
+          \indent 设小明有$x$个苹果，则小红有$3x+5$ 或者$x+25$个苹果。\newline
+          \indent 根据题意可得：$3x+5$ = $x+25$ \newline
+          \indent $2x$ = 20 \newline
+          \indent $x$ = 10 \newline
+          \indent 小红有$x$ +25 = 35个苹果。\newline
+    \item Problem 3
+          \newline
+          \noindent 小红苹果个数是小明的5倍，如果小红给小明10个苹果，那么两人苹果个数就一样多。小红有多少个苹果？ \newline
+          \textbf{解：}
+          \begin{tikzpicture}[scale=0.8, >=stealth]
+              % 定义两个点
+              \coordinate (P1) at (0,0);
+              \coordinate (P2) at (2,0);
+              \coordinate (P3) at (0,1);
+              \coordinate (P4) at (2,1);
+              \coordinate (P5) at (4,0);
+              \coordinate (P6) at (6,0);
+              \coordinate (P7) at (8,0);
+              \coordinate (P8) at (10,0);
+              % 1. 在起点 (0,0) 处放置文字 (使用 'left' 定位)
+              % 首先定义起点 (0,0) 为一个节点 N1，并放置文字
+              \node (label1) at (P1) [left] {小红};
+              \node (label2) at (P3) [left] {小明};
+              \node (label2) at (0,-1) [left] {小红-小明};
+              % 然后从这个点开始画线段
+              \draw[ thick] (P1) -- (P8);
+              \draw[ thick] (P3) -- (P4);
+
+              \draw[thick,red] (0,-1) -- (4,-1);
+              % \draw[decorate, decoration={brace, amplitude=7pt, mirror}] (P1) -- (P2)
+              % node[midway, below=8pt] {35}; % mirror 选项使大括号朝向P1和P2定义的路径的内部
+              \draw[decorate, decoration={brace, amplitude=5pt}] (P3) -- (P4)
+              node[midway, above=6pt] {$x$};
+              \draw[decorate, decoration={brace, amplitude=5pt}] (0,0.5) -- (10,0.5)
+              node[midway, above=6pt] {$5x$};
+
+
+
+
+
+              \draw[dashed] (P1) -- ++(0, 0.5);
+              \draw[dashed] (P2) -- ++(0, 0.5);
+              \draw[dashed] (P6) -- ++(0, 0.5);
+              \draw[dashed] (P5) -- ++(0, 0.5);
+              \draw[dashed] (P7) -- ++(0, 0.5);
+              \draw[dashed] (P8) -- ++(0, 0.5);
+              % \draw[<->,thick] (0,0.3) -- (3,0.3) node[midway, above] { ?};
+              % \draw[<->,thick] (3,0.3) -- (6,0.3) node[midway, above] { ?};
+              % \draw[<->,thick] (6,0.3) -- (9,0.3) node[midway, above] { ?};
+              \draw[dashed] (0,-1) -- ++(0, 0.5);
+              \draw[dashed] (2,-1) -- ++(0, 0.5);
+              \draw[dashed] (4,-1) -- ++(0, 0.5);
+
+
+
+              \draw[decorate, decoration={brace, amplitude=10pt}] (4,-1) -- (0,-1)
+              node[midway, below=8pt] {10};
+
+          \end{tikzpicture}
+
+          \vspace{0.5cm}
+
+          $5$ - 1 = 4 \newline
+          \indent $4\div2$  =  \newline
+          \indent $10\div2$  = 5(个) \newline
+          \indent $3\times5$   = 15(个) \newline
+
+          答：小红有15个苹果。\newline
+          \textbf{列方程：} \newline
+          \indent 设小明有$x$个苹果，则小红有$5x$ 或者$x+25$个苹果。\newline
+          \indent 根据题意可得：$5x-10$ = $x+10$ \newline
+          \indent $4x$ = 20 \newline
+          \indent $x$ = 5 \newline
+          \indent 小红有$5x$  = 20个苹果。\newline
+
+
+\end{itemize}
+
+
+
+
+\noindent   注意\footnote{本讲义同样适合初中学生使用，比如列方程等。}：以上所有问题均可以通过列方程的方法进行解答，建议学生尝试用列方程的方法进行解答。:
+
+
+
+\end{problem}
+%---------------------------------------------------------------------------------------------
+% \begin{problem}
+
+% \section{Segundo Problema}
+
+% \noindent
+
+% \end{problem}
+%---------------------------------------------------------------------------------------------
+
+
+
+%--------------------------------------BIBLIOGRAFIA-------------------------------------------
+
+\newpage
+
+\nocite{*} % Agrega las referencias aunque no las hayas citado directamente
+
+\bibliographystyle{unsrt}    % ESTILO DE BIBLIOGRAFÍA (Recomendados: abbrv, ieeetr, apalike, unsrt)
+\bibliography{refs}     % REFERENCIAS EN ARCHIVO SEPARADO
+
+
+\end{document}

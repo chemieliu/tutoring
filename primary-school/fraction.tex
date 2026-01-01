@@ -1,0 +1,422 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[UTF8]{ctex}  % 中文支持
+
+%%%%%%%%%%%%%%%%%%%%%
+% pour écrire avec les accents directement dans le texte
+
+\usepackage[frenchb,english]{babel}
+
+ \usepackage[T1]{fontenc}
+ \usepackage[colorlinks=false, urlcolor=black, breaklinks, pagebackref, citebordercolor={0 0 0}, filebordercolor={0 0 0}, linkbordercolor={0 0 0}, pagebordercolor={0 0 0}, runbordercolor={0 0 0}, urlbordercolor={0 0 0}, pdfborder={0 0 0}]{hyperref} 
+%%%%%%%%%%%%%%%%%%%%% 
+
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{icomma}
+\usepackage{latexsym}
+\usepackage[numbers]{natbib}
+\usepackage{textcomp}
+\usepackage[all]{xy}
+\usepackage{cancel}
+\usepackage{color}
+\usepackage{dsfont}
+\usepackage{subfig}
+\usepackage{caption}
+\usepackage{dsfont}
+\usepackage{extarrows}
+\usepackage{shorttoc}
+\usepackage{listings}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage{moreverb}
+\usepackage{amsmath, amsfonts, amssymb} % Ecuaciones, caracteres y símbolos especiales
+\usepackage{hyperref, url}  % Links y Hyperlinks en el documento
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing, calc} % 加载必要的库
+\lstset{language=scilab}
+
+\lstset{
+        basicstyle=\ttfamily,
+        emphstyle=\color{blue},
+        columns=flexible,
+        breaklines=true,
+        keywordstyle=\color{blue},
+        commentstyle=\color{red},
+}
+
+   \newcommand{\bigO}[1]{\ensuremath{\mathop{}\mathopen{}O\mathopen{}\left(#1\right)}}
+   \newcommand{\smallO}[1]{\ensuremath{\mathop{}\mathopen{}o\mathopen{}\left(#1\right)}}
+
+\captionsetup{font=footnotesize}
+
+\setcounter{tocdepth}{3}
+
+\makeatletter
+\def\clap#1{\hbox to 0pt{\hss #1\hss}}%
+\def\ligne#1{%
+\hbox to \hsize{%
+\vbox{\centering #1}}}%
+\def\haut#1#2#3{%
+\hbox to \hsize{%
+\rlap{\vtop{\raggedright #1}}%
+\hss
+\clap{\vtop{\centering #2}}%
+\hss
+\llap{\vtop{\raggedleft #3}}}}%
+\def\bas#1#2#3{%
+\hbox to \hsize{%
+\rlap{\vbox{\raggedright #1}}%
+\hss
+\clap{\vbox{\centering #2}}%
+\hss
+\llap{\vbox{\raggedleft #3}}}}%
+\def\maketitle{%
+\thispagestyle{empty}\vbox to \vsize{%
+\haut{}{\@blurb}{}
+\vfill
+\vspace{0.5cm}
+\hrule height 2pt
+\vspace{0.2cm}
+\par
+\begin{center}
+\fontseries{bx}
+\huge \@title
+\end{center}
+\vspace{0.2cm}
+\par
+\hrule height 2pt
+\par
+\vspace{2cm}
+% \begin{center}
+% \Large
+% % \textit{Auteurs:}
+% \end{center}
+\begin{center}
+\Large 
+\@author
+\par
+\end{center}
+\vspace{1cm}
+% \begin{center}
+% \Large
+% \textit{Responsable:}
+% \end{center}
+% \begin{center}
+% \Large 
+% Christian Robert
+% \par
+% \end{center}
+% \vfill
+\vfill
+\bas{}{\begin{flushright}
+\large
+\@location
+\end{flushright}}{}
+}%
+\cleardoublepage
+}
+\def\date#1{\def\@date{#1}}
+\def\author#1{\def\@author{#1}}
+\def\title#1{\def\@title{#1}}
+\def\location#1{\def\@location{#1}}
+\def\blurb#1{\def\@blurb{#1}}
+\date{\today}
+\author{}
+\title{}
+\location{Lyon}\blurb{}
+\makeatother
+\title{三年级分数应用题}
+\author{Liu}
+\location{Hangzhou}
+\blurb{%
+\begin{center}
+% \fbox{\includegraphics[width=6em]{Images/isfa.jpg}}
+\end{center}
+%Pour\\
+%\textbf{type de stage}\\[1em]
+%Maître de stage : moralles\\
+}%
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\newpage
+
+\part*{Introduction}\label{sec:name}
+\addcontentsline{toc}{part}{Introduction}
+
+\textcolor{blue}{分数应用题简介}
+
+\vspace{0.5cm}
+\hspace{1.5cm}
+这里更多是理清部分与整体、比例关系、单位“1”等关系，对分数定义中的平均分有个更好的了解。
+
+
+
+
+\section{直接应用乘除做题}
+
+不用考虑混合运算，直接应用乘除做题。
+
+\subsection{总体到部分}
+
+
+\noindent 小明有36个苹果，卖掉其中的$\frac{1}{3}$。卖掉多少个苹果？ \newline
+\textbf{解：}
+\begin{tikzpicture}[scale=0.8, >=stealth]
+        % 定义两个点
+        \coordinate (P1) at (0,0);
+        \coordinate (P2) at (3,0);
+        \coordinate (P3) at (0,1);
+        \coordinate (P4) at (3,1);
+        \coordinate (P5) at (9,0);
+        \coordinate (P6) at (6,0);
+        % 1. 在起点 (0,0) 处放置文字 (使用 'left' 定位)
+        % 首先定义起点 (0,0) 为一个节点 N1，并放置文字
+        \node (label1) at (P1) [left] {总共};
+        \node (label2) at (P3) [left] {$\frac{1}{3}$};
+        % 然后从这个点开始画线段
+        \draw[ thick] (P1) -- (P2);
+        \draw[ thick] (P3) -- (P4);
+        \draw[thick,red] (P1) -- (P5);
+        % \draw[decorate, decoration={brace, amplitude=7pt, mirror}] (P1) -- (P2)
+        % node[midway, below=8pt] {35}; % mirror 选项使大括号朝向P1和P2定义的路径的内部
+        \draw[decorate, decoration={brace, amplitude=5pt}] (P3) -- (P4)
+        node[midway, above=6pt] {？};
+
+        \draw[dashed] (P1) -- ++(0, 0.5);
+        \draw[dashed] (3,0) -- ++(0, 0.5);
+        \draw[<->,thick] (0,0.3) -- (9,0.3) node[midway, above] { $36$};
+        \draw[dashed] (P1) -- ++(0, 0.5);
+        \draw[dashed] (P6) -- ++(0, 0.5);
+        \draw[dashed] (P5) -- ++(0, 0.5);
+
+        \draw[decorate, decoration={brace, amplitude=10pt, mirror}] (P1) -- (P2)
+        node[midway, below=8pt] {？}; % mirror 选项使大括号朝向P1和P2定义的路径的内部
+
+\end{tikzpicture}
+
+\vspace{0.5cm}
+看到$\frac{1}{3}$，就想到平均分成三份，这里是用除法。\newline
+$36 \div 3 = 12$\newline
+\textbf{答：}卖掉12个苹果。\newline
+
+\subsection{部分到整体}
+
+
+\noindent 有一些苹果，小明卖掉其中的$\frac{1}{3}$，一共卖掉9个。原来一共有多少个苹果？ \newline
+\textbf{解：}
+\begin{tikzpicture}[scale=0.8, >=stealth]
+        % 定义两个点
+        \coordinate (P1) at (0,0);
+        \coordinate (P2) at (3,0);
+        \coordinate (P3) at (0,1);
+        \coordinate (P4) at (3,1);
+        \coordinate (P5) at (9,0);
+        \coordinate (P6) at (6,0);
+        % 1. 在起点 (0,0) 处放置文字 (使用 'left' 定位)
+        % 首先定义起点 (0,0) 为一个节点 N1，并放置文字
+        \node (label1) at (P1) [left] {总共};
+        \node (label2) at (P3) [left] {$\frac{1}{3}$};
+        % 然后从这个点开始画线段
+        \draw[ thick] (P1) -- (P2);
+        \draw[ thick] (P3) -- (P4);
+        \draw[thick,red] (P1) -- (P5);
+        % \draw[decorate, decoration={brace, amplitude=7pt, mirror}] (P1) -- (P2)
+        % node[midway, below=8pt] {35}; % mirror 选项使大括号朝向P1和P2定义的路径的内部
+        \draw[decorate, decoration={brace, amplitude=5pt}] (P3) -- (P4)
+        node[midway, above=6pt] {9};
+
+        \draw[dashed] (P1) -- ++(0, 0.5);
+        \draw[dashed] (3,0) -- ++(0, 0.5);
+        \draw[<->,thick] (0,0.3) -- (3,0.3) node[midway, above] { $9$};
+        \draw[dashed] (P1) -- ++(0, 0.5);
+        \draw[dashed] (P6) -- ++(0, 0.5);
+        \draw[dashed] (P5) -- ++(0, 0.5);
+
+        \draw[decorate, decoration={brace, amplitude=10pt, mirror}] (P1) -- (P5)
+        node[midway, below=8pt] {？}; % mirror 选项使大括号朝向P1和P2定义的路径的内部
+
+\end{tikzpicture}
+
+\vspace{0.5cm}
+看到$\frac{1}{3}$，就想到平均分成三份，这里是用乘法。\newline
+整体分成了三份，每份是9个苹果。\newline
+$9 \times 3 = 27$\newline
+\textbf{答：}一共有27个苹果。\newline
+
+
+
+
+
+
+
+\section{不直接应用乘除做题}
+
+基本上要把整体分成几部分，得到每部分占比是多少，再进行计算。
+
+\subsection{总体到部分}
+
+
+\noindent 小明有36个苹果，卖掉其中的$\frac{3}{4}$。还剩下多少个苹果？ \newline
+\textbf{解：}
+\begin{tikzpicture}[scale=0.8, >=stealth]
+        % 定义两个点
+        \coordinate (P1) at (0,0);
+        \coordinate (P2) at (3,0);
+        \coordinate (P3) at (0,1);
+        \coordinate (P4) at (3,1);
+        \coordinate (P5) at (9,0);
+        \coordinate (P7) at (12,0);
+        \coordinate (P6) at (6,0);
+        % 1. 在起点 (0,0) 处放置文字 (使用 'left' 定位)
+        % 首先定义起点 (0,0) 为一个节点 N1，并放置文字
+        \node (label1) at (P1) [left] {总共};
+
+        % 然后从这个点开始画线段
+        \draw[ thick] (P1) -- (P2);
+
+        \draw[thick,red] (P1) -- (P7);
+        % \draw[decorate, decoration={brace, amplitude=7pt, mirror}] (P1) -- (P2)
+        % node[midway, below=8pt] {35}; % mirror 选项使大括号朝向P1和P2定义的路径的内部
+
+
+        \draw[dashed] (P1) -- ++(0, 0.5);
+        \draw[dashed] (3,0) -- ++(0, 0.5);
+        \draw[<->,thick] (0,0.3) -- (12,0.3) node[midway, above] { $36$};
+        \draw[dashed] (P1) -- ++(0, 0.5);
+        \draw[dashed] (P6) -- ++(0, 0.5);
+        \draw[dashed] (P5) -- ++(0, 0.5);
+        \draw[dashed] (P7) -- ++(0, 0.5);
+
+        \draw[decorate, decoration={brace, amplitude=10pt, mirror}] (P1) -- (P5)
+        node[midway, below=8pt] {$\frac{3}{4}$};
+        \draw[decorate, decoration={brace, amplitude=10pt, mirror}] (P5) -- (P7)
+        node[midway, below=8pt] {？};  % mirror 选项使大括号朝向P1和P2定义的路径的内部
+
+\end{tikzpicture}
+
+\vspace{0.5cm}
+总共=卖掉+剩余 \newline
+看到一共36个，$\frac{3}{4}$，有了总体和份数，就想到平均分成四份，可以得到每份是多少。\newline
+每份：$36 \div 4 = 9$\newline
+两个思路，先求卖掉是多少，再用总体减去卖掉的；
+卖掉三份，剩余一份。\newline
+卖掉：$9 \times 3 = 27$\newline
+剩余：$36 - 27 = 9$\newline
+\textbf{或者}\newline
+剩余：
+$4-3=1$\newline
+$9 \times 1 = 9$\newline
+
+
+
+
+\textbf{答：}还剩下9个苹果。\newline
+
+\subsection{部分到整体}
+
+
+\noindent 有一些苹果，小明卖掉其中的$\frac{2}{5}$，还剩下9个。原来一共有多少个苹果？ \newline
+\textbf{解：}
+\begin{tikzpicture}[scale=0.8, >=stealth]
+        % 定义两个点
+        \coordinate (P1) at (0,0);
+        \coordinate (P2) at (3,0);
+        \coordinate (P3) at (0,1);
+        \coordinate (P4) at (3,1);
+        \coordinate (P5) at (9,0);
+        \coordinate (P7) at (12,0);
+        \coordinate (P8) at (15,0);
+        \coordinate (P6) at (6,0);
+        % 1. 在起点 (0,0) 处放置文字 (使用 'left' 定位)
+        % 首先定义起点 (0,0) 为一个节点 N1，并放置文字
+        \node (label1) at (P1) [left] {总共};
+
+        \draw[ thick] (P1) -- (P2);
+
+        \draw[thick,red] (P1) -- (P8);
+        % \draw[decorate, decoration={brace, amplitude=7pt, mirror}] (P1) -- (P2)
+        % node[midway, below=8pt] {35}; % mirror 选项使大括号朝向P1和P2定义的路径的内部
+
+
+        \draw[dashed] (P1) -- ++(0, 0.5);
+        \draw[dashed] (3,0) -- ++(0, 0.5);
+        %     \draw[<->,thick] (0,0.3) -- (3,0.3) node[midway, above] { $9$};
+        \draw[decorate, decoration={brace, amplitude=10pt, mirror}] (P6) -- (P1)
+        node[midway, above=8pt] { $\frac{2}{5}$};
+        \draw[decorate, decoration={brace, amplitude=10pt, mirror}] (P8) -- (P6)
+        node[midway, above=8pt] { 9};
+        \draw[dashed] (P1) -- ++(0, 0.5);
+        \draw[dashed] (P6) -- ++(0, 0.5);
+        \draw[dashed] (P5) -- ++(0, 0.5);
+        \draw[dashed] (P7) -- ++(0, 0.5);
+        \draw[dashed] (P8) -- ++(0, 0.5);
+
+        \draw[decorate, decoration={brace, amplitude=10pt, mirror}] (P1) -- (P8)
+        node[midway, below=8pt] {？}; % mirror 选项使大括号朝向P1和P2定义的路径的内部
+
+\end{tikzpicture}
+
+\vspace{0.5cm}
+看到$\frac{2}{5}$，就想到平均分成5份\newline
+总共=卖掉+剩余 \newline
+卖掉$\frac{2}{5}$，就是卖掉2份，剩余3份\newline
+剩余：$5-2=3$\newline
+每份：$9 \div 3 = 3$\newline
+整体：$3 \times 5 = 15$\newline
+
+\textbf{答：}一共有15个苹果。\newline
+
+\section{综合应用做题}
+由于时间关系，我不先不做图，直接文字解释。
+\subsection{多个部分之和}
+一本书共100页，小明上午读了全书的$\frac{2}{5}$，下午读了全书的$\frac{1}{4}$，他一共读了多少页？\newline
+\textbf{解：}\newline
+这里都是在总体中进行份数的计算，然后把部分加起来。\newline
+
+上午读：$100 \div 5 \times 2 = 40$\newline
+下午读：$100 \div 4 \times 1 = 25$\newline
+一共读：$40 + 25 = 65$\newline
+\textbf{答：}一共读了65页。\newline
+一本书共100页，小明上午读了全书的$\frac{2}{5}$，下午读了剩下部分的$\frac{1}{4}$，他一共读了多少页？\newline
+\textbf{解：}\newline
+下午的部分是剩下部分，所以要减去已经读的。再求每份是多少。\newline
+上午读：$100 \div 5 \times 2 = 40$\newline
+剩下部分：$100 - 40 = 60$\newline
+下午读：$60 \div 4 \times 1 = 15$\newline
+一共读：$40 + 15 = 55$\newline
+\textbf{答：}一共读了55页。\newline
+
+
+
+
+
+
+\newpage
+
+\part*{Conclusion}\label{sec:name}
+\addcontentsline{toc}{part}{Conclusion}
+分数应用题，主要是理清部分与整体、先后步骤。
+这里需要对每个步骤的整体、部分有个了解。
+更多是一种细致认真，理清各项数据。\newline
+如读书那个题目，记录这本书一共多少页，上午看了多少，还剩多少。
+上午剩下的就是下午的总体，然后把每次阅读的页数相加。\newline
+这里的计算不算难，要明白这里的“1”，它不是数字“1”，而是“一个整体”的概念单位。"unit one / the whole"转成数学语言就是"1"。
+把整体看作单位“1”，本质上是将复杂的、具体的数量抽象化。它让我们不再纠结于具体的数字（比如 500克或 100人），而是专注于部分与整体之间的比例关系。\newline
+建议用好草稿纸，用文字标记一下每个数字代表什么，就跟我上面写的一样。
+\newpage
+
+
+
+\end{document}
