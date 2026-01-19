@@ -1,0 +1,208 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[UTF8]{ctex}  % 中文支持
+
+%%%%%%%%%%%%%%%%%%%%%
+% pour écrire avec les accents directement dans le texte
+
+\usepackage[frenchb,english]{babel}
+
+ \usepackage[T1]{fontenc}
+ \usepackage[colorlinks=false, urlcolor=black, breaklinks, pagebackref, citebordercolor={0 0 0}, filebordercolor={0 0 0}, linkbordercolor={0 0 0}, pagebordercolor={0 0 0}, runbordercolor={0 0 0}, urlbordercolor={0 0 0}, pdfborder={0 0 0}]{hyperref} 
+%%%%%%%%%%%%%%%%%%%%% 
+
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{icomma}
+\usepackage{latexsym}
+\usepackage[numbers]{natbib}
+\usepackage{textcomp}
+\usepackage[all]{xy}
+\usepackage{cancel}
+\usepackage{color}
+\usepackage{dsfont}
+\usepackage{subfig}
+\usepackage{caption}
+\usepackage{dsfont}
+\usepackage{extarrows}
+\usepackage{shorttoc}
+\usepackage{listings}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage{moreverb}
+\usepackage{amsmath, amsfonts, amssymb} % Ecuaciones, caracteres y símbolos especiales
+\usepackage{hyperref, url}  % Links y Hyperlinks en el documento
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing, calc} % 加载必要的库
+\lstset{language=scilab}
+
+\lstset{
+        basicstyle=\ttfamily,
+        emphstyle=\color{blue},
+        columns=flexible,
+        breaklines=true,
+        keywordstyle=\color{blue},
+        commentstyle=\color{red},
+}
+
+   \newcommand{\bigO}[1]{\ensuremath{\mathop{}\mathopen{}O\mathopen{}\left(#1\right)}}
+   \newcommand{\smallO}[1]{\ensuremath{\mathop{}\mathopen{}o\mathopen{}\left(#1\right)}}
+
+\captionsetup{font=footnotesize}
+
+\setcounter{tocdepth}{3}
+
+\makeatletter
+\def\clap#1{\hbox to 0pt{\hss #1\hss}}%
+\def\ligne#1{%
+\hbox to \hsize{%
+\vbox{\centering #1}}}%
+\def\haut#1#2#3{%
+\hbox to \hsize{%
+\rlap{\vtop{\raggedright #1}}%
+\hss
+\clap{\vtop{\centering #2}}%
+\hss
+\llap{\vtop{\raggedleft #3}}}}%
+\def\bas#1#2#3{%
+\hbox to \hsize{%
+\rlap{\vbox{\raggedright #1}}%
+\hss
+\clap{\vbox{\centering #2}}%
+\hss
+\llap{\vbox{\raggedleft #3}}}}%
+\def\maketitle{%
+\thispagestyle{empty}\vbox to \vsize{%
+\haut{}{\@blurb}{}
+\vfill
+\vspace{0.5cm}
+\hrule height 2pt
+\vspace{0.2cm}
+\par
+\begin{center}
+\fontseries{bx}
+\huge \@title
+\end{center}
+\vspace{0.2cm}
+\par
+\hrule height 2pt
+\par
+\vspace{2cm}
+% \begin{center}
+% \Large
+% % \textit{Auteurs:}
+% \end{center}
+\begin{center}
+\Large 
+\@author
+\par
+\end{center}
+\vspace{1cm}
+% \begin{center}
+% \Large
+% \textit{Responsable:}
+% \end{center}
+% \begin{center}
+% \Large 
+% Christian Robert
+% \par
+% \end{center}
+% \vfill
+\vfill
+\bas{}{\begin{flushright}
+\large
+\@location
+\end{flushright}}{}
+}%
+\cleardoublepage
+}
+\def\date#1{\def\@date{#1}}
+\def\author#1{\def\@author{#1}}
+\def\title#1{\def\@title{#1}}
+\def\location#1{\def\@location{#1}}
+\def\blurb#1{\def\@blurb{#1}}
+\date{\today}
+\author{}
+\title{}
+\location{Lyon}\blurb{}
+\makeatother
+\title{绿汀春晓关于包阳台利弊大辩论}
+\author{Liu}
+\location{Hangzhou}
+\blurb{%
+\begin{center}
+% \fbox{\includegraphics[width=6em]{Images/isfa.jpg}}
+\end{center}
+%Pour\\
+%\textbf{type de stage}\\[1em]
+%Maître de stage : moralles\\
+}%
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\newpage
+
+\part*{Preface}\label{sec:name}
+\addcontentsline{toc}{part}{Preface}
+
+
+绿汀春晓位于余杭区闲林街道，于2026年1月交付。为提升业主的居住体验，部分业主提出包阳台的提议，得到了大部分业主的赞同。本着“求同存异、和谐共赢“理念，业主进行了充分的讨论，现在对这场大辩论进行一次记录，特写下本文。
+
+\part*{Introduction}\label{sec:name}
+\addcontentsline{toc}{part}{Introduction}
+绿汀春晓小区户型不是统一的，各个业主的住房面积是不同的、业主的年龄段也不是处在同一时代，每个人都有自己的想法与诉求，对包阳台自然有不同的想法。\newline
+\indent 包与不包、怎样包、如何包，每个阶段都会伴随着不同的声音、都有不同的意见，让更多业主能够充分参与、充分知情、充分讨论是对业主权利的尊重也是对业主个体利益的维护。\newline
+\indent 目前绿汀春晓包阳台行动坚持在政府的领导下、在法律的框架内、在物业的配合下做事，坚持走流程、坚持民主协商。\newline
+\indent 任何辩论难免都会掺杂着情绪，再理性的讨论也难免不会受到感性、情绪的影响，各位业主的大辩论虽然体现着个体的利益，仍然希望最后不成为个人生活的困扰。
+\part*{Methodology}\label{sec:name}
+\addcontentsline{toc}{part}{Methodology}
+目前依然以业主微信群讨论为主，笔者是希望各位业主到4幢一层公区面对面讨论的并愿意提供适当的茶水。目前被7幢某位业主识破目的，恐怕不能成行。\newline
+\indent 流程还是以投票为主，投票结果会为作为推进下一步的前置条件。\newline
+\indent 总的方法：政府批准、物业确认、民主投票（少数服从多数）。
+\section{宣传有利因素}
+有利因素过多，只罗列几处作为参考，并简单描述。
+\subsection{卫生}
+包了阳台，外边的灰尘进来少了。
+
+\subsection{安全}
+家里有小朋友，住在高层，包阳台，更加安全。
+\section{驳斥不利因素}
+这里对不利因素逐一驳斥，后期可能还要进行添加。
+
+\subsection{房价会跌}
+15幢某位业主为房地产从业人员，提出论断，包阳台比不包阳台要贵。\newline
+这里不是论文研究，没有给出数据。如果愿意，作者愿意配合一起调研。
+
+\subsection{不安全}
+\subsubsection{台风}
+杭州台风频繁，
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
