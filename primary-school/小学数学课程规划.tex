@@ -1,0 +1,259 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[UTF8]{ctex}  % 中文支持
+
+%%%%%%%%%%%%%%%%%%%%%
+% pour écrire avec les accents directement dans le texte
+
+\usepackage[frenchb,english]{babel}
+
+ \usepackage[T1]{fontenc}
+ \usepackage[colorlinks=false, urlcolor=black, breaklinks, pagebackref, citebordercolor={0 0 0}, filebordercolor={0 0 0}, linkbordercolor={0 0 0}, pagebordercolor={0 0 0}, runbordercolor={0 0 0}, urlbordercolor={0 0 0}, pdfborder={0 0 0}]{hyperref} 
+%%%%%%%%%%%%%%%%%%%%% 
+
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{icomma}
+\usepackage{latexsym}
+\usepackage[numbers]{natbib}
+\usepackage{textcomp}
+\usepackage[all]{xy}
+\usepackage{cancel}
+\usepackage{color}
+\usepackage{dsfont}
+\usepackage{subfig}
+\usepackage{caption}
+\usepackage{dsfont}
+\usepackage{extarrows}
+\usepackage{shorttoc}
+\usepackage{listings}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage{moreverb}
+\usepackage{amsmath, amsfonts, amssymb} % Ecuaciones, caracteres y símbolos especiales
+\usepackage{hyperref, url}  % Links y Hyperlinks en el documento
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing, calc} % 加载必要的库
+\lstset{language=scilab}
+
+\lstset{
+        basicstyle=\ttfamily,
+        emphstyle=\color{blue},
+        columns=flexible,
+        breaklines=true,
+        keywordstyle=\color{blue},
+        commentstyle=\color{red},
+}
+
+   \newcommand{\bigO}[1]{\ensuremath{\mathop{}\mathopen{}O\mathopen{}\left(#1\right)}}
+   \newcommand{\smallO}[1]{\ensuremath{\mathop{}\mathopen{}o\mathopen{}\left(#1\right)}}
+
+\captionsetup{font=footnotesize}
+
+\setcounter{tocdepth}{3}
+
+\makeatletter
+\def\clap#1{\hbox to 0pt{\hss #1\hss}}%
+\def\ligne#1{%
+\hbox to \hsize{%
+\vbox{\centering #1}}}%
+\def\haut#1#2#3{%
+\hbox to \hsize{%
+\rlap{\vtop{\raggedright #1}}%
+\hss
+\clap{\vtop{\centering #2}}%
+\hss
+\llap{\vtop{\raggedleft #3}}}}%
+\def\bas#1#2#3{%
+\hbox to \hsize{%
+\rlap{\vbox{\raggedright #1}}%
+\hss
+\clap{\vbox{\centering #2}}%
+\hss
+\llap{\vbox{\raggedleft #3}}}}%
+\def\maketitle{%
+\thispagestyle{empty}\vbox to \vsize{%
+\haut{}{\@blurb}{}
+\vfill
+\vspace{0.5cm}
+\hrule height 2pt
+\vspace{0.2cm}
+\par
+\begin{center}
+\fontseries{bx}
+\huge \@title
+\end{center}
+\vspace{0.2cm}
+\par
+\hrule height 2pt
+\par
+\vspace{2cm}
+% \begin{center}
+% \Large
+% % \textit{Auteurs:}
+% \end{center}
+\begin{center}
+\Large 
+\@author
+\par
+\end{center}
+\vspace{1cm}
+% \begin{center}
+% \Large
+% \textit{Responsable:}
+% \end{center}
+% \begin{center}
+% \Large 
+% Christian Robert
+% \par
+% \end{center}
+% \vfill
+\vfill
+\bas{}{\begin{flushright}
+\large
+\@location
+\end{flushright}}{}
+}%
+\cleardoublepage
+}
+\def\date#1{\def\@date{#1}}
+\def\author#1{\def\@author{#1}}
+\def\title#1{\def\@title{#1}}
+\def\location#1{\def\@location{#1}}
+\def\blurb#1{\def\@blurb{#1}}
+\date{\today}
+\author{}
+\title{}
+\location{Lyon}\blurb{}
+\makeatother
+\title{小学数学课程规划}
+\author{Liu}
+\location{Hangzhou}
+\blurb{%
+\begin{center}
+% \fbox{\includegraphics[width=6em]{Images/isfa.jpg}}
+\end{center}
+%Pour\\
+%\textbf{type de stage}\\[1em]
+%Maître de stage : moralles\\
+}%
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\newpage
+
+\part*{Introduction}\label{sec:name}
+\addcontentsline{toc}{part}{Introduction}
+
+
+本课程规划主要是针对小学阶段的数学学习进行规划，帮助学生系统地掌握数学知识，培养数学思维能力，并为未来的学习打下坚实的基础。
+课程内容涵盖了小学阶段的主要数学知识点。
+
+
+\indent 通过有针对性的教学和练习，帮助学生逐步提升数学能力，培养他们解决问题的能力和创新思维。 \newline
+\indent 本课程暂不对课程时间进行规划，考虑到不是所有人都完整跟着学习，本人讲课速度偏快，基本上一节课覆盖校内一到两章的知识点。
+
+\part*{Knowledge Structure}\label{sec:name}
+\addcontentsline{toc}{part}{Knowledge Structure}
+本课程主要是小学全阶段核心知识点，适合有一定基础学习，最好能读出100以内自然数、10以内的加减法、有一定的阅读能力。
+
+
+
+
+\section{数与代数}
+这一部分主要是对小学中整数、小数、分数相关知识的学习。
+\subsection{整数}
+\begin{enumerate}
+        \item 大数的认识
+        \item 也稍微思考一下可能会出的题目类型
+        \item 近一周提升自己的应试技巧
+        \item 尽量不要背题，记忆结论不是背题
+
+\end{enumerate}
+\subsection{积极的心理状态}
+\section{考试内容}
+
+\subsection{知道考试范围}
+三上数学主要考混合运算，毫米、分米、千米（克、千克、吨），多位数乘一位数，线和角和分数。\newline
+\indent 学期内还学习了多位数加减法、除数是一位数除法。\newline
+\indent 如果无法确定或者老师没有告知考试内容，就把本学期所学内容都要掌握。
+
+\subsection{知识串联}
+如果从头开始复习，知识点很散，不够成体系，也容易遗忘。\newline
+\indent 知识联系，每个人都有自己的体系，最后有个自己的总结。这里我说一下我的思路。
+
+\subsubsection{整数加减乘除}
+混合运算、多位数加减运算、多位数乘一位数、一位数除一位数都可以认为是整数的运算范围。
+他们是互相联系的，加减、乘除都是互为逆运算，也就是说加减可以相互验算、乘除也可以相互验算。
+这些知识可以作为一个章节复习。
+
+\subsubsection{认识分数}
+这里的分数单独成一个章节，只有简单的同分母加减和一些分数应用题，要用到除法。
+
+\subsubsection{长度单位与重量单位}
+这里是容易失分的地方\newline
+首先对一公里有个认识，三年级小朋友走一公里需要15到20分钟。大体有个印象，那么家到学校的距离可以说5公里，当看到数值是500或者3000这样比较大的数值，不要用千米。\newline
+1分米，手掌长度或者说一扎1分米。课桌长度，铅笔长度可以用几分米，如果遇到课桌长度70厘米，这里做好换算。\newline
+1厘米,指甲宽度。1毫米，指甲厚度。\newline
+鸡蛋50到60克、一包A4打印纸2千克、一辆小汽车2吨。\newline
+这里是熟练度与判断的考察，遇到没见的，多想一想，也是可以选出合适的单位的。
+
+
+
+\subsection{提升考试技能}
+考试技能包括多方面的。
+\subsubsection{总结题型}
+
+\begin{enumerate}
+        \item 混合运算,就是考察运算顺序与括号的作用，只要认真、做好检查
+        \item 长度单位、重量单位，考察单位判断、单位计算要先转成相同的单位
+\end{enumerate}
+\subsubsection{适当记忆结论}
+结论不需要推导，直接用
+\begin{enumerate}
+        \item 运算中，$25 \times 4 = 100$，$125\times 8 = 1000$
+        \item 数角、数线段，三个点，1+2 = 3， 四个点：1+2+3 = 6，5个点：1+2+3+4 = 10
+        \item 正方体展开，三三、一三二、二二二、一四一模型
+        \item 观察一个长方体，最多看到3个面
+        \item 对折一次，分成2部分，对折两次，4部分，对折一次乘以2
+\end{enumerate}
+
+\subsubsection{检查结果}
+\begin{enumerate}
+        \item 个位判断，如：$127 \times 6$,个位一定是2
+        \item 本学期主要考多位数乘一位数，可以用除数是一位数除法验证
+
+\end{enumerate}
+\subsubsection{易错点}
+\begin{enumerate}
+        \item 问题中有一周、一对、两侧等，要乘法
+        \item 分数中一定要体现平均分
+        \item 射线OA,射线AO不是一条射线，第一个字母是射线的字母，第二个字母是延长的方向
+        \item 线段长度测量，就是后面刻度减去前面刻度长度
+
+\end{enumerate}
+
+
+\part*{Conclusion}\label{sec:name}
+\addcontentsline{toc}{part}{Conclusion}
+\begin{enumerate}
+        \item 考前多看一下自己以前的错题
+        \item 也稍微思考一下可能会出的题目类型
+        \item 近一周提升自己的应试技巧
+        \item 尽量不要背题，记忆结论不是背题
+
+\end{enumerate}
+
+
+
+\end{document}

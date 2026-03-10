@@ -1,0 +1,174 @@
+\documentclass[../circle.tex]{subfiles}
+\usepackage{tikz}
+\usepackage{amsmath}
+\begin{document}
+\section{2025初中名校共同体九年级期中}
+如图1，$C$、$D$ 是以 $AB$ 为直径的圆 $O$ 上的两动点，分别位于 $AB$ 两侧，且满足 $\overset{\frown}{CB} = 2 \overset{\frown}{DB}$。连接 $CD$ 交 $AB$ 于点 $E$，连接 $AC$、$BD$、$AD$。
+
+\begin{enumerate}
+    \item 证明：$AC = AE$；
+    \item 若 $BD = 1$，$AD = 2$，求 $AE$ 的长；
+    \item 如图2，若直径 $AB$ 为定值，当 $\triangle ABC$ 的面积最大时，求 $\triangle CEB$ 的面积与 $\triangle BED$ 的面积比。
+\end{enumerate}
+
+\vspace{1em}
+\begin{center}
+    \begin{minipage}{0.45\textwidth}
+        \begin{tikzpicture}[scale=1]
+            % 圆及直径
+            \coordinate (A) at (0,0);
+            \coordinate (B) at (6,0);
+            \coordinate (O) at ($(A)!0.5!(B)$);
+            \draw (O) circle (3cm);
+            \filldraw[black] (O) circle (1pt);
+            \node[left] at (A) {\small A};
+            \node[right] at (B) {\small B};
+            \node[below] at (O) {\small O};
+
+            % 点C在上方圆周，点D在下方圆周
+            \coordinate (C) at ($(O)+(60:3)$);
+            % \coordinate (C) at (60:3); % 点B在左上
+            \coordinate (D) at ($(O)+(-30:3)$);
+            \node[above] at (C) {\small C};
+            \node[below] at (D) {\small D};
+
+            % 连接线段
+            \draw (A) -- (B);
+            \draw (C) -- (D);
+            \draw (A) -- (C);
+            \draw (A) -- (D);
+            \draw (B) -- (D);
+
+            % 交点E
+            \coordinate (E) at (intersection of A--B and C--D);
+            \filldraw[red] (E) circle (1pt);
+            \node[above right] at (E) {\small E};
+        \end{tikzpicture}
+
+    \end{minipage}
+    \begin{minipage}{0.45\textwidth}
+        % 图形框架（图2）
+        \begin{tikzpicture}[scale=1]
+            % 圆及直径
+            \coordinate (A2) at (0,0);
+            \coordinate (B2) at (6,0);
+            \coordinate (O2) at ($(A2)!0.5!(B2)$);
+            \draw (O2) circle (3cm);
+            \filldraw[black] (O2) circle (1pt);
+            \node[left] at (A2) {\small A};
+            \node[right] at (B2) {\small B};
+            \node[below] at (O2) {\small O};
+
+            % 点C在上方圆周，点D在下方圆周
+            \coordinate (C2) at ($(O2)+(90:3)$);
+            \coordinate (D2) at ($(O2)+(-45:3)$);
+            \node[above] at (C2) {\small C};
+            \node[below] at (D2) {\small D};
+
+            % 构造E点
+            \coordinate (E2) at (intersection of C2--D2 and A2--B2);
+            \filldraw[red] (E2) circle (1pt);
+            \node[above right] at (E2) {\small E};
+
+            % 连接线段
+            \draw (A2) -- (B2);
+            \draw (A2) -- (C2);
+            \draw (B2) -- (C2);
+            \draw (A2) -- (D2);
+            \draw (B2) -- (D2);
+            \draw (C2) -- (E2) -- (B2);
+            \draw (B2) -- (E2) -- (D2);
+        \end{tikzpicture}
+    \end{minipage}
+    % 图形框架（图1）
+
+\end{center}
+\textbf{解：}
+\begin{enumerate}
+    \item 前两问比较简单,连接BC,设$\angle BAD = \alpha$,那么$\angle BAC = 2\alpha$ \
+          $\angle ACD = 90^\circ - \alpha$，$\angle AEC = 180^\circ - \angle EAC-\angle ACE = 90^\circ - \alpha$，\newline
+          第二问，用好相似或者三角函数与勾股定理
+          \begin{center}
+              \begin{tikzpicture}[scale=1]
+                  % 圆及直径
+                  \coordinate (A) at (0,0);
+                  \coordinate (B) at (6,0);
+                  \coordinate (O) at ($(A)!0.5!(B)$);
+                  \draw (O) circle (3cm);
+                  \filldraw[black] (O) circle (1pt);
+                  \node[left] at (A) {\small A};
+                  \node[right] at (B) {\small B};
+                  \node[below] at (O) {\small O};
+
+                  % 点C在上方圆周，点D在下方圆周
+                  \coordinate (C) at ($(O)+(60:3)$);
+                  % \coordinate (C) at (60:3); % 点B在左上
+                  \coordinate (D) at ($(O)+(-30:3)$);
+                  \node[above] at (C) {\small C};
+                  \node[below] at (D) {\small D};
+
+                  % 连接线段
+                  \coordinate (F) at ($(E)!0.5!(B)$);
+                  \draw (A) -- (B);
+                  \draw[dashed] (C) -- (B);
+                  \draw[dashed] (D) -- (F);
+                  \draw (C) -- (D);
+                  \draw (A) -- (C);
+                  \draw (A) -- (D);
+                  \draw (B) -- (D);
+
+                  % 交点E
+                  \coordinate (E) at (intersection of A--B and C--D);
+                  \filldraw[red] (E) circle (1pt);
+                  \node[above left] at (E) {\small E};
+                  \node[above] at (F) {\small F};
+              \end{tikzpicture}
+          \end{center}
+    \item 连接OD,OC,DF,面积之比就是高度比，即$\frac{DF}{OC}$ 。$\angle FOD = 45^\circ$，$\triangle DOA 是一个等腰三角形$，如果不会这个辅助线，直接使用高中三角函数把高度解出来也行
+          \begin{center}
+
+              \begin{minipage}{0.45\textwidth}
+                  % 图形框架（图2）
+                  \begin{tikzpicture}[scale=1]
+                      % 圆及直径
+                      \coordinate (A2) at (0,0);
+                      \coordinate (B2) at (6,0);
+                      \coordinate (O2) at ($(A2)!0.5!(B2)$);
+                      \draw (O2) circle (3cm);
+                      \filldraw[black] (O2) circle (1pt);
+                      \node[left] at (A2) {\small A};
+                      \node[right] at (B2) {\small B};
+                      \node[below] at (O2) {\small O};
+
+                      % 点C在上方圆周，点D在下方圆周
+                      \coordinate (C2) at ($(O2)+(90:3)$);
+                      \coordinate (D2) at ($(O2)+(-45:3)$);
+                      \node[above] at (C2) {\small C};
+                      \node[below] at (D2) {\small D};
+
+                      % 构造E点
+                      \coordinate (E2) at (intersection of C2--D2 and A2--B2);
+                      \filldraw[red] (E2) circle (1pt);
+                      \node[above left] at (E2) {\small E};
+
+                      % 连接线段
+                      \coordinate (F) at ($(E2)!0.5!(B2)$);
+                      \draw (A2) -- (B2);
+                      \draw[dashed] (C2) -- (O2);
+                      \draw[dashed] (O2) -- (D2);
+                      \draw[dashed] (F) -- (D2);
+                      \draw (A2) -- (C2);
+                      \draw (B2) -- (C2);
+                      \draw (A2) -- (D2);
+                      \draw (B2) -- (D2);
+                      \draw (C2) -- (E2) -- (B2);
+                      \draw (B2) -- (E2) -- (D2);
+                      \node[above] at (F) {\small F};
+                  \end{tikzpicture}
+              \end{minipage}
+              % 图形框架（图1）
+
+          \end{center}
+
+\end{enumerate}
+\end{document}
