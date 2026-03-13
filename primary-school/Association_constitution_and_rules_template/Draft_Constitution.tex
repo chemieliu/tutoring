@@ -1,6 +1,19 @@
 \documentclass[10pt]{report}
 \usepackage[UTF8]{ctex} 
+\usepackage[most]{tcolorbox}
 
+\newtcolorbox{parchmentquote}{
+    enhanced,
+    colback=orange!5!white,   % 浅米黄色背景
+    colframe=orange!50!black,
+    boxrule=0.5pt,
+    arc=2pt,                  % 细微圆角
+    boxsep=5pt,
+    before skip=10pt,
+    after skip=10pt,
+    fontupper=\itshape,
+    borderline west={2pt}{0pt}{orange!80!black} % 加厚的左装饰线
+}
 \include{Functional/Packages} % Imports all the required packages. See Functional/Packages.tex for more detailS
 \include{Functional/Preamble}
 
@@ -8,7 +21,7 @@
 \begin{document}
 
 \input{Functional/Title_Page}
-
+\include{Content/0.Preface}
 \setcounter{page}{2} % Make it include the title page even though it doesn't show the page number on it
 
 \ChapterTitle{CONTENTS}
@@ -22,5 +35,7 @@
 
 \include{Content/Algebra/integer_basic}
 \include{Content/Algebra/integer_advanced}
+\include{Content/Algebra/decimals}
+\include{Content/Algebra/fraction}
 
 \end{document}
