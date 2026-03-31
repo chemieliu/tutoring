@@ -1,0 +1,79 @@
+\documentclass[DIN, pagenumber=false, fontsize=11pt, parskip=half]{scrartcl}
+\usepackage[UTF8]{ctex}  % 中文支持
+% \usepackage{ngerman}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{xcolor} % Required for custom red
+
+\usepackage{geometry} % Custom margins
+
+\usepackage{tocloft} % Modifying the table of contents
+
+% for matlab code
+% bw = blackwhite - optimized for print, otherwise source is colored
+\usepackage[framed,numbered,bw]{mcode}
+\usepackage[most]{tcolorbox}
+% for other code
+%\usepackage{listings}
+
+\setlength{\parindent}{0em}
+
+% set section in CM
+\setkomafont{section}{\normalfont\bfseries\Large}
+
+\newcommand{\mytitle}[1]{{\noindent\Large\textbf{#1}}}
+\newcommand{\mysection}[1]{\textbf{\section*{#1}}}
+\newcommand{\mysubsection}[2]{\romannumeral #1) #2}
+
+\newtcolorbox{parchmentquote}{
+    enhanced,
+    colback=orange!5!white,   % 浅米黄色背景
+    colframe=orange!50!black,
+    boxrule=0.5pt,
+    arc=2pt,                  % 细微圆角
+    boxsep=5pt,
+    before skip=10pt,
+    after skip=10pt,
+    fontupper=\itshape,
+    borderline west={2pt}{0pt}{orange!80!black} % 加厚的左装饰线
+}
+%===================================
+\begin{document}
+
+\noindent\textbf{课下讲义} \hfill \textbf{online course}\\
+primary school \hfill Liu\\
+
+\mytitle{行程问题 \hfill \today}
+\newline
+\begin{parchmentquote}
+	行程为题是数学与物理学中常见的题型，涉及到速度、时间和距离之间的关系。难一点的题目需要借助图像法，也就是柳卡图等来解答。
+\end{parchmentquote}
+
+
+%===================================
+\section{简单行程问题}
+$ s = v \times t $
+\newline
+其中，\(s\) 表示距离，\(v\) 表示速度，\(t\) 表示时间。
+\newline
+\subsection{平均速度} 
+已知上山的平均速度为30米/分，上山用时85分钟，下山原路返回用时51分钟，求下山的平均速度。
+
+\subsection{水中行船} 
+顺水船速 = 船速 + 水速
+
+逆水船速 = 船速 - 水速
+\newline
+一艘船往返于相距648千米的两个码头之间，顺水而下需要36个小时，逆流而下需要54个小时。
+如今，水流速度增加，顺水而行只需要27小时，那么现在逆流而上需要多久。
+\section{相遇问题}
+$s = (v_1 + v_2) \times t$,
+\subsection{同向出发相遇}
+姐弟俩同时从家里出发去图书馆，路程全长1540米，弟弟每分钟走70米，姐姐骑自行车忆每分钟150米的速度到达图书馆后立即返回，途中与弟弟相遇。
+这时弟弟走了几分钟？
+\subsection{多人多物相遇}
+甲乙两人相距30km，甲速度为$3km/h$，乙速度为$7km/h$，在某时刻，两人同向而行。甲带了一个机器人，机器人以$10km/h$的速度在甲和乙之间来回行走。问：当甲和乙相遇时，机器人共走了多少公里？
+\subsection{圆形跑道}
+在长为400米的环形跑道上，甲和乙从同一个地点开始相向跑步。甲的速度是每分钟120米，乙的速度是每分钟80米。两人相遇后继续跑，从出发开始，经过多久两人第二次相遇？
+\end{document}
