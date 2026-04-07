@@ -1,0 +1,89 @@
+\documentclass[DIN, pagenumber=false, fontsize=11pt, parskip=half]{scrartcl}
+\usepackage[UTF8]{ctex}  % 中文支持
+% \usepackage{ngerman}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{xcolor} % Required for custom red
+
+\usepackage{geometry} % Custom margins
+
+\usepackage{tocloft} % Modifying the table of contents
+
+% for matlab code
+% bw = blackwhite - optimized for print, otherwise source is colored
+\usepackage[framed,numbered,bw]{mcode}
+\usepackage[most]{tcolorbox}
+% for other code
+%\usepackage{listings}
+
+\setlength{\parindent}{0em}
+
+% set section in CM
+\setkomafont{section}{\normalfont\bfseries\Large}
+
+\newcommand{\mytitle}[1]{{\noindent\Large\textbf{#1}}}
+\newcommand{\mysection}[1]{\textbf{\section*{#1}}}
+\newcommand{\mysubsection}[2]{\romannumeral #1) #2}
+
+\newtcolorbox{parchmentquote}{
+    enhanced,
+    colback=orange!5!white,   % 浅米黄色背景
+    colframe=orange!50!black,
+    boxrule=0.5pt,
+    arc=2pt,                  % 细微圆角
+    boxsep=5pt,
+    before skip=10pt,
+    after skip=10pt,
+    fontupper=\itshape,
+    borderline west={2pt}{0pt}{orange!80!black} % 加厚的左装饰线
+}
+%===================================
+\begin{document}
+
+\noindent\textbf{课下练习} \hfill \textbf{online course}\\
+primary school \hfill Liu\\
+
+\mytitle{分数约分与通分 \hfill \today}
+\newline
+\begin{parchmentquote}
+	应用分数基本性质，可以实现分数的约分与通分
+\end{parchmentquote}
+
+
+%===================================
+\section{简单约分与通分运算}
+
+\subsection{化成最简分数} 
+
+\begin{enumerate}
+    \item \(\frac{12}{18} = \underline{\qquad}\)
+    \item \(\frac{45}{60} = \underline{\qquad}\)
+    \item \(\frac{28}{42} = \underline{\qquad}\)
+    \item \(\frac{36}{48} = \underline{\qquad}\)
+    \item \(\frac{16}{40} = \underline{\qquad}\)
+\end{enumerate}
+\subsection{分数通分} 
+
+\noindent \textbf{练习：在括号内填入合适的数字完成通分。}
+
+\begin{enumerate}
+    \item $\dfrac{2}{3} = \dfrac{2 \times (\quad)}{3 \times 4} = \dfrac{(\quad)}{12}$
+    \item $\dfrac{17}{19}  = \dfrac{(\quad)}{152}$
+    \item $\dfrac{13}{23}  = \dfrac{39}{(\quad)}$
+    \item $\dfrac{5}{8}$ 和 $\dfrac{7}{12}$ 转成分母是24的分数：
+    \[
+    \frac{5}{8} = \frac{15}{24}, \quad \frac{7}{12} = \frac{(\quad)}{24}
+    \]
+     \item $\dfrac{5}{6}$ 和 $\dfrac{7}{9}$ 最小公倍数通分：
+    \[
+    \frac{5}{6} = \frac{(\quad)}{(\quad)}, \quad \frac{7}{9} = \frac{(\quad)}{(\quad)}
+    \]
+\end{enumerate}
+
+\section{应用题}
+\subsection{比较大小}
+小明、小红和小华进行打字比赛。在相同的时间内，小明完成了打字任务的 $\frac{5}{8}$，小红完成了 $\frac{7}{12}$，小华完成了 $\frac{3}{4}$。请问谁的打字速度最快？
+\subsection{信息提取}
+一个分数的分子是最小的质数，分母比分子大6，求这个分数并化成最简形式。
+\end{document}

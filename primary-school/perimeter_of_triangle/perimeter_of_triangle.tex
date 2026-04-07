@@ -1,0 +1,201 @@
+\documentclass[DIN, pagenumber=false, fontsize=11pt, parskip=half]{scrartcl}
+\usepackage[UTF8]{ctex}  % 中文支持
+% \usepackage{ngerman}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{xcolor} % Required for custom red
+
+\usepackage{geometry} % Custom margins
+
+\usepackage{tocloft} % Modifying the table of contents
+
+% for matlab code
+% bw = blackwhite - optimized for print, otherwise source is colored
+\usepackage[framed,numbered,bw]{mcode}
+\usepackage[most]{tcolorbox}
+% for other code
+%\usepackage{listings}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+ 
+
+%<<<<<<<WARNING>>>>>>>
+% PGF/Tikz doesn't support hatch filling very well
+% Use PStricks for a perfect hatching export
+
+\usetikzlibrary[patterns]
+
+\setlength{\parindent}{0em}
+
+% set section in CM
+\setkomafont{section}{\normalfont\bfseries\Large}
+
+\newcommand{\mytitle}[1]{{\noindent\Large\textbf{#1}}}
+\newcommand{\mysection}[1]{\textbf{\section*{#1}}}
+\newcommand{\mysubsection}[2]{\romannumeral #1) #2}
+
+\newtcolorbox{parchmentquote}{
+    enhanced,
+    colback=orange!5!white,   % 浅米黄色背景
+    colframe=orange!50!black,
+    boxrule=0.5pt,
+    arc=2pt,                  % 细微圆角
+    boxsep=5pt,
+    before skip=10pt,
+    after skip=10pt,
+    fontupper=\itshape,
+    borderline west={2pt}{0pt}{orange!80!black} % 加厚的左装饰线
+}
+%===================================
+\begin{document}
+
+\noindent\textbf{课下讲义} \hfill \textbf{face-to-face course}\\
+primary school \hfill Liu\\
+
+\mytitle{长方形周长 \hfill \today}
+\newline
+\begin{parchmentquote}
+    复杂图形的周长是有做题方法的，但是不管怎样，基础放在第一位。
+\end{parchmentquote}
+
+
+%===================================
+\section{图形周长的认识}
+周长是指环绕有限区域的\textbf{封闭边界}的总长度
+\newline
+如图所示，只有外部的边界一周才是周长，内部$GD$的长度不算在周长内。
+% \begin{tikzpicture}
+%     % 画长方形
+%     \draw[thick] (0,0) rectangle (5,3);
+    
+%     % 添加长度标注
+%     % mid-way 自动找到线段中点，below/left 设置文字方位
+%     % \draw[<->] (0,-0.3) ;
+%     % \draw[<->] (-0.3,0) -- node[left] {$b = 3\,\text{cm}$} (-0.3,3);
+    
+%     % 在中心标注面积
+  
+% \end{tikzpicture}
+\begin{tikzpicture}
+    % 定义点变量 A 和 B
+    \coordinate (A) at (0,0);
+    \coordinate (B) at (0,4);
+    \coordinate (C) at (2,4);
+    \coordinate (D) at (2,0);
+    \coordinate (E) at (4,0);
+    \coordinate (F) at (4,3);
+    \coordinate (G) at (2,3);
+    
+    % 使用变量连线
+    \draw[thick] (A) -- (B);
+    \draw[thick] (B) -- (C);
+    \draw[thick] (C) -- (D);
+    \draw[thick] (D) -- (E);
+    \draw[thick] (E) -- (F);
+    \draw[thick] (F) -- (G);
+    \draw[thick] (A) -- (D);
+    
+    % 计算并标记中点 M (需要加载 calc 库)
+    % \usetikzlibrary{calc}
+    
+    
+    % 绘制点并标注文字
+    \fill (A) circle (2pt) node[below] {$A$};
+    \fill (B) circle (2pt) node[above] {$B$};
+    \fill (C) circle (2pt) node[right] {$C$};   
+    \fill (D) circle (2pt) node[below] {$D$};
+    \fill (E) circle (2pt) node[right] {$E$};
+    \fill (F) circle (2pt) node[above] {$F$};
+    \fill (G) circle (2pt) node[above] {$G$};
+ 
+\end{tikzpicture}
+\begin{tikzpicture}
+    % 定义点变量 A 和 B
+    \coordinate (A) at (0,0);
+    \coordinate (B) at (0,4);
+    \coordinate (C) at (2,4);
+    \coordinate (D) at (2,0);
+    \coordinate (E) at (4,0);
+    \coordinate (F) at (4,3);
+    \coordinate (G) at (2,3);
+    
+    % 使用变量连线
+    \draw[blue,line width=2pt ] (A) -- (B);
+    \draw[blue,line width=2pt] (B) -- (C);
+    \draw[thick] (C) -- (D);
+    \draw[thick] (D) -- (E);
+    \draw[blue,line width=2pt] (E) -- (F);
+    \draw[blue,line width=2pt] (F) -- (G);
+    \draw[thick] (A) -- (D);
+    \draw[blue,line width=2pt] (A) -- (E);
+    \draw[blue,line width=2pt] (C) -- (G);
+    
+    % 计算并标记中点 M (需要加载 calc 库)
+    % \usetikzlibrary{calc}
+    
+    
+    % 绘制点并标注文字
+    \fill (A) circle (2pt) node[below] {$A$};
+    \fill (B) circle (2pt) node[above] {$B$};
+    \fill (C) circle (2pt) node[above] {$C$};   
+    \fill (D) circle (2pt) node[below] {$D$};
+    \fill (E) circle (2pt) node[right] {$E$};
+    \fill (F) circle (2pt) node[above] {$F$};
+    \fill (G) circle (2pt) node[above right] {$G$};
+   
+\end{tikzpicture}
+\section{几种常见的图形}
+\subsection{篱笆问题}
+\begin{center}
+   \begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.2\textwidth]{liba_2.png}
+    \caption{截图}
+    \label{fig:example}
+\end{figure} 
+\end{center}
+
+\subsection{缺一角的长方形}
+\begin{tikzpicture}
+    % 定义点变量 A 和 B
+    \coordinate (A) at (0,0);
+    \coordinate (B) at (0,4);
+    \coordinate (C) at (2,4);
+    \coordinate (D) at (2,0);
+    \coordinate (E) at (4,0);
+    \coordinate (F) at (4,3);
+    \coordinate (G) at (2,3);
+    
+    % 使用变量连线
+    \draw[blue,line width=2pt ] (A) -- (B);
+    \draw[blue,line width=2pt] (B) -- (C);
+    \draw[thick] (C) -- (G);
+    \draw[thick] (D) -- (E);
+    \draw[blue,line width=2pt] (E) -- (F);
+    \draw[blue,line width=2pt] (F) -- (G);
+    \draw[thick] (A) -- (D);
+    \draw[blue,line width=2pt] (A) -- (E);
+    \draw[blue,line width=2pt] (C) -- (G);
+    
+    % 计算并标记中点 M (需要加载 calc 库)
+    % \usetikzlibrary{calc}
+    
+    
+    % 绘制点并标注文字
+    \fill (A) circle (2pt) node[below] {$A$};
+    \fill (B) circle (2pt) node[above] {$B$};
+    \fill (C) circle (2pt) node[above] {$C$};   
+    \fill (D) circle (2pt) node[below] {$D$};
+    \fill (E) circle (2pt) node[right] {$E$};
+    \fill (F) circle (2pt) node[above] {$F$};
+    \fill (G) circle (2pt) node[above right] {$G$};
+   
+\end{tikzpicture}
+
+
+
+\end{document}

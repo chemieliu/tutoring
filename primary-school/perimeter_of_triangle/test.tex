@@ -1,0 +1,40 @@
+\documentclass[10pt]{article}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+ 
+
+%<<<<<<<WARNING>>>>>>>
+% PGF/Tikz doesn't support hatch filling very well
+% Use PStricks for a perfect hatching export
+
+\usetikzlibrary[patterns]
+\begin{document}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1}
+\definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1}
+\definecolor{qqwuqq}{rgb}{0,0.39215686274509803,0}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\clip(-6.225661365953253,-11.162678421517843) rectangle (22.537614917470453,12.938854076169095);
+\fill[line width=2pt,color=qqwuqq,fill=qqwuqq,pattern=north east lines,pattern color=qqwuqq] (0,0) -- (2,0) -- (2,1) -- (0,1) -- cycle;
+\fill[line width=2pt,color=qqwuqq,fill=qqwuqq,pattern=north east lines,pattern color=qqwuqq] (2,0) -- (4,0) -- (4,1) -- (2,1) -- cycle;
+\fill[line width=2pt,color=qqwuqq,fill=qqwuqq,pattern=north east lines,pattern color=qqwuqq] (4,0) -- (6,0) -- (6,1) -- (4,1) -- cycle;
+\fill[line width=2pt,color=qqwuqq,fill=qqwuqq,pattern=north east lines,pattern color=qqwuqq] (6,0) -- (8,0) -- (8,1) -- (6,1) -- cycle;
+\fill[line width=2pt,color=qqwuqq,fill=qqwuqq,pattern=north east lines,pattern color=qqwuqq] (8,0) -- (10,0) -- (10,1) -- (8,1) -- cycle;
+\fill[line width=2pt,color=qqwuqq,fill=qqwuqq,pattern=north east lines,pattern color=qqwuqq] (10,0) -- (12,0) -- (12,1) -- (10,1) -- cycle;
+\draw [line width=5.2pt] (2,0)-- (2,-4);
+\draw [line width=5.2pt] (2,-4)-- (10,-4);
+\draw [line width=5.2pt] (10,-4)-- (10,0);
+\begin{scriptsize}
+\draw [fill=xdxdff] (2,0) circle (2.5pt);
+\draw[color=xdxdff] (2.2415875509972762,0.6819562993848817) node {$A$};
+\draw [fill=ududff] (2,-4) circle (2.5pt);
+\draw[color=ududff] (2.2415875509972762,-3.3138240883895316) node {$B$};
+\draw [fill=ududff] (10,-4) circle (2.5pt);
+\draw[color=ududff] (10.264860869306204,-3.3138240883895316) node {$C$};
+\draw [fill=xdxdff] (10,0) circle (2.5pt);
+\draw[color=xdxdff] (10.264860869306204,0.6819562993848817) node {$D$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,75 @@
+\documentclass[DIN, pagenumber=false, fontsize=11pt, parskip=half]{scrartcl}
+\usepackage[UTF8]{ctex}  % 中文支持
+% \usepackage{ngerman}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{xcolor} % Required for custom red
+
+\usepackage{geometry} % Custom margins
+
+\usepackage{tocloft} % Modifying the table of contents
+
+% for matlab code
+% bw = blackwhite - optimized for print, otherwise source is colored
+\usepackage[framed,numbered,bw]{mcode}
+\usepackage[most]{tcolorbox}
+% for other code
+%\usepackage{listings}
+
+\setlength{\parindent}{0em}
+
+% set section in CM
+\setkomafont{section}{\normalfont\bfseries\Large}
+
+\newcommand{\mytitle}[1]{{\noindent\Large\textbf{#1}}}
+\newcommand{\mysection}[1]{\textbf{\section*{#1}}}
+\newcommand{\mysubsection}[2]{\romannumeral #1) #2}
+
+\newtcolorbox{parchmentquote}{
+    enhanced,
+    colback=orange!5!white,   % 浅米黄色背景
+    colframe=orange!50!black,
+    boxrule=0.5pt,
+    arc=2pt,                  % 细微圆角
+    boxsep=5pt,
+    before skip=10pt,
+    after skip=10pt,
+    fontupper=\itshape,
+    borderline west={2pt}{0pt}{orange!80!black} % 加厚的左装饰线
+}
+%===================================
+\begin{document}
+
+\noindent\textbf{课下讲义} \hfill \textbf{online course}\\
+primary school \hfill Liu\\
+
+\mytitle{行程问题 \hfill \today}
+\newline
+\begin{parchmentquote}
+    加入一些难度系数较高的行程问题，涉及到平均速度、相遇问题等。可以引入图像法来帮助理解和解答。
+\end{parchmentquote}
+
+
+%===================================
+\section{速度差值}
+\subsection{简单差值计算}
+甲乙两人同时从两地相向而行，甲的速度$5\,\text{km/h}$，乙的速度$4\,\text{km/h}$，相遇时甲比乙多走$3km$,问两地相距多少公里？
+\section{中点问题}
+
+\subsection{相遇加中点}
+甲乙两人同时分别从A、B两地出发，相向而行。相遇之地距A、B中点300米，已知甲的速度$100\,\text{m/min}$，乙的速度$60\,\text{m/min}$。问：甲乙两地相距离多远？
+
+\subsection{求中点}
+甲乙两人同时分别从A、B两地出发，相向而行。已知两地相距$1100m$，甲的速度$50\,\text{m/min}$，乙的速度$70\,\text{m/min}$。问：甲乙两人相遇时距离中点多少米？
+\subsection{求速度}
+甲乙两人同时分别从A、B两地出发，相向而行。甲的速度$100\,\text{m/min}$,五分钟后甲已经超过中点$50m$，这是两人还相距离$30m$。问：乙的速度多少？？
+\section{停顿}
+
+\subsection{终点停顿再出发}
+已知A、B两地相距$560km$，甲与乙同时从A地出发前往B地，甲的速度$80\,\text{km/h}$，乙的速度$40\,\text{km/h}$，甲到达B地后停留一个小时，又以原来的速度返回A地,两人相遇时候距离A地多远 ？
+\subsection{缓出发}
+\subsection{终点停顿再出发}
+甲与乙同时从A地出发前往B地，甲的速度$60\,\text{km/h}$，乙的速度$50\,\text{km/h}$，乙出发4个小时后甲再出发，甲需要多长时间才能追上乙？
+
+\end{document}

@@ -1,0 +1,103 @@
+\documentclass[DIN, pagenumber=false, fontsize=11pt, parskip=half]{scrartcl}
+\usepackage[UTF8]{ctex}  % 中文支持
+% \usepackage{ngerman}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{xcolor} % Required for custom red
+\usepackage{amsmath, amssymb} % 数学公式必备
+\usepackage{geometry} % Custom margins
+\usepackage{enumitem}
+\usepackage{tocloft} % Modifying the table of contents
+
+% for matlab code
+% bw = blackwhite - optimized for print, otherwise source is colored
+\usepackage[framed,numbered,bw]{mcode}
+\usepackage[most]{tcolorbox}
+% for other code
+%\usepackage{listings}
+
+\setlength{\parindent}{0em}
+
+% set section in CM
+\setkomafont{section}{\normalfont\bfseries\Large}
+
+\newcommand{\mytitle}[1]{{\noindent\Large\textbf{#1}}}
+\newcommand{\mysection}[1]{\textbf{\section*{#1}}}
+\newcommand{\mysubsection}[2]{\romannumeral #1) #2}
+
+\newtcolorbox{parchmentquote}{
+    enhanced,
+    colback=orange!5!white,   % 浅米黄色背景
+    colframe=orange!50!black,
+    boxrule=0.5pt,
+    arc=2pt,                  % 细微圆角
+    boxsep=5pt,
+    before skip=10pt,
+    after skip=10pt,
+    fontupper=\itshape,
+    borderline west={2pt}{0pt}{orange!80!black} % 加厚的左装饰线
+}
+% 设置选项样式：使用 A, B, C, D
+
+%===================================
+\begin{document}
+
+\noindent\textbf{课下练习} \hfill \textbf{online course}\\
+primary school \hfill Liu\\
+
+\mytitle{分数加法减法 \hfill \today}
+\newline
+\begin{parchmentquote}
+	难点在异分母分数加减法
+\end{parchmentquote}
+
+
+%===================================
+\section{选择题}
+下面4组数中，()组中的数都是质数。
+\begin{enumerate}[label=\Alph*.]
+  \item $13,71,51$
+  \item $47,79,93$
+  \item $31,73,97$
+  \item $2,17,91$
+\end{enumerate}
+当a是自然数时，4a+1一定是()。
+
+\begin{enumerate}[label=\Alph*.]
+  \item 奇数 \item 偶数
+  \item 质数
+  \item 偶数
+\end{enumerate}
+用2、3、5、8四张卡片摆数，摆出的四位数()。
+
+\begin{enumerate}[label=\Alph*.]
+  \item 一定是2的倍数
+  \item 一定是5的倍数
+  \item 一定是3的倍数
+  \item 不确定是不是2、3、5的倍数
+\end{enumerate}
+如果$\frac{12}{18}$的分子减去4，要使分数的大小不变，分母可以()。
+
+\begin{enumerate}[label=\Alph*.]
+  \item 减去4
+  \item 减去15
+  \item 除以4
+  \item 除以5
+\end{enumerate}
+
+\section{计算题}
+\begin{enumerate}
+    \item \(\frac{2}{11} + \frac{3}{11} = \underline{\qquad}\)
+    \item \(\frac{11}{12} + \frac{13}{24} = \underline{\qquad}\)
+    \item \(\frac{2}{3} - \frac{5}{6}+\frac{1}{3} = \underline{\qquad}\)
+    \item \(0.8 + \frac{3}{5} = \underline{\qquad}\)
+    \item \(2.25 - \frac{3}{4}+ \frac{2}{3}  = \underline{\qquad}\)
+    \item \(17 - 1\frac{17}{19}- \frac{2}{19}  = \underline{\qquad}\)
+    \item \(\frac{5}{6}- \frac{2}{9}  = \underline{\qquad}\)
+   
+\end{enumerate}
+
+
+
+\end{document}
