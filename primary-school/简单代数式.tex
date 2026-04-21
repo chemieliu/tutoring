@@ -1,0 +1,93 @@
+\documentclass[DIN, pagenumber=false, fontsize=11pt, parskip=half]{scrartcl}
+\usepackage[UTF8]{ctex}  % 中文支持
+% \usepackage{ngerman}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{xcolor} % Required for custom red
+
+\usepackage{geometry} % Custom margins
+
+\usepackage{tocloft} % Modifying the table of contents
+
+% for matlab code
+% bw = blackwhite - optimized for print, otherwise source is colored
+\usepackage[framed,numbered,bw]{mcode}
+\usepackage[most]{tcolorbox}
+% for other code
+%\usepackage{listings}
+
+\setlength{\parindent}{0em}
+
+% set section in CM
+\setkomafont{section}{\normalfont\bfseries\Large}
+
+\newcommand{\mytitle}[1]{{\noindent\Large\textbf{#1}}}
+\newcommand{\mysection}[1]{\textbf{\section*{#1}}}
+\newcommand{\mysubsection}[2]{\romannumeral #1) #2}
+
+\newtcolorbox{parchmentquote}{
+    enhanced,
+    colback=orange!5!white,   % 浅米黄色背景
+    colframe=orange!50!black,
+    boxrule=0.5pt,
+    arc=2pt,                  % 细微圆角
+    boxsep=5pt,
+    before skip=10pt,
+    after skip=10pt,
+    fontupper=\itshape,
+    borderline west={2pt}{0pt}{orange!80!black} % 加厚的左装饰线
+}
+%===================================
+\begin{document}
+
+\noindent\textbf{课下练习} \hfill \textbf{online course}\\
+primary school \hfill Liu\\
+
+\mytitle{简单代数式 \hfill \today}
+\newline
+\begin{parchmentquote}
+	这一部分就是小学比较难的内容了，需要慢慢消化，不是一两节课就能掌握的，而是一种思维的转变。
+\end{parchmentquote}
+
+
+%===================================
+\section{代数式}
+
+\subsection{用字母表示数} 
+把数换成字母，来表示一些数量关系。
+如：
+
+\begin{enumerate}
+    \item 一支铅笔$a$元
+    \item 小明今年$b$岁
+\end{enumerate}
+\subsection{书写规范} 
+\begin{enumerate}
+    \item 字母和数字或者字母与字母之间用$\cdot$连或者省略,如$a \cdot b$,$ab$,$5x$。
+    \item 省略乘号时，数字在前，字母在后，如$5x$，而不是$x5$。
+    \item 数字是$1$或者$-1$时，通常省略不写，如$a$,$-a$ 。
+    \item 数字是带分数时候，要写成假分数形式，如$\frac{7}{3}a$，而不是$2\frac{1}{3}a$。 
+    \item 运算结果不出现除号，写成分数形式。如$a \div b$,写成$\frac{a}{b}$，$a \div 2$,写成$\frac{a}{2}$。
+\end{enumerate}
+
+
+\section{练习}
+ 用字母表示下列数量关系：
+\begin{enumerate}
+  
+    \item 已知小红的年龄是$a$岁，试用代数式表示下列关系：
+    \begin{enumerate}
+        \item 小明今年的年龄是小红的两倍。
+        \item 小明今年的年龄比小红大3岁。
+        \item 小明今年的年龄是小红的年龄的3倍再多2岁。
+    \end{enumerate}
+\end{enumerate}
+尝试列方程，未知数数用$x$表示：
+\begin{enumerate}
+    \item 小明今年的年龄是小红的两倍，小明今年12岁，试列方程求小红的年龄。
+    \item 小明今年的年龄比小红大3岁，小明今年12岁，试列方程求小红的年龄。
+    \item 小明今年的年龄是小红的年龄的3倍再多2岁，小明今年12岁，试列方程求小红的年龄。  
+    \item  小明今年的年龄是小红的两倍，小明今年12岁，试列方程求小红的年龄。
+\end{enumerate}
+\end{document}
