@@ -1,0 +1,98 @@
+\documentclass[DIN, pagenumber=false, fontsize=11pt, parskip=half]{scrartcl}
+\usepackage[UTF8]{ctex}  % 中文支持
+% \usepackage{ngerman}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{xcolor} % Required for custom red
+
+\usepackage{geometry} % Custom margins
+
+\usepackage{tocloft} % Modifying the table of contents
+
+% for matlab code
+% bw = blackwhite - optimized for print, otherwise source is colored
+\usepackage[framed,numbered,bw]{mcode}
+\usepackage[most]{tcolorbox}
+% for other code
+%\usepackage{listings}
+
+\setlength{\parindent}{0em}
+
+% set section in CM
+\setkomafont{section}{\normalfont\bfseries\Large}
+
+\newcommand{\mytitle}[1]{{\noindent\Large\textbf{#1}}}
+\newcommand{\mysection}[1]{\textbf{\section*{#1}}}
+\newcommand{\mysubsection}[2]{\romannumeral #1) #2}
+
+\newtcolorbox{parchmentquote}{
+    enhanced,
+    colback=orange!5!white,   % 浅米黄色背景
+    colframe=orange!50!black,
+    boxrule=0.5pt,
+    arc=2pt,                  % 细微圆角
+    boxsep=5pt,
+    before skip=10pt,
+    after skip=10pt,
+    fontupper=\itshape,
+    borderline west={2pt}{0pt}{orange!80!black} % 加厚的左装饰线
+}
+%===================================
+\begin{document}
+
+\noindent\textbf{课下练习} \hfill \textbf{online course}\\
+primary school \hfill Liu\\
+
+\mytitle{分数复习 \hfill \today}
+\newline
+\begin{parchmentquote}
+    对分数的概念、基本性质与计算进行复习。\newline
+    最大公约数与最小公倍数短除法要掌握，在分数运算中约分、通分有广泛应用。
+\end{parchmentquote}
+
+
+%===================================
+\section{分数概念}
+
+\subsection{分数读写}
+\subsubsection{读出下面分数}
+
+\begin{enumerate}
+    \item $\frac{1}{2}$
+    \item $\frac{3}{2}$
+    \item $5\frac{6}{11}$
+\end{enumerate}
+\subsubsection{写出下面分数}
+
+\begin{enumerate}
+    \item 九十五分之七
+    \item 七分之七
+    \item 三又九分之五
+\end{enumerate}
+\subsection{分数概念的理解}
+\subsubsection{假分数转成带分数}
+\begin{enumerate}
+    \item $\frac{5}{3}$
+    \item $\frac{136}{11}$
+\end{enumerate}
+\subsubsection{带分数转成假分数}
+\begin{enumerate}
+    \item $4\frac{2}{3}$
+    \item $12\frac{7}{18}$
+\end{enumerate}
+\subsubsection{分数单位}
+\begin{enumerate}
+    \item $\frac{2}{3}$的分数单位
+    \item 以$\frac{1}{18}$为分数单位的真分数有哪些
+\end{enumerate}
+\section{分数运算}
+\begin{enumerate}
+    \item $\frac{2}{3} + \frac{5}{6} = $
+    \item $\frac{7}{14} + \frac{5}{21} = $
+    \item $1.5 \times \frac{2}{5}  = $
+    \item $\frac{9}{25} \times \frac{20}{21}  = $
+    \item $\frac{12}{49} \div \frac{21}{56}  = $
+\end{enumerate}
+
+\end{document}
