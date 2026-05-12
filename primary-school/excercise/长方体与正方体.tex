@@ -1,0 +1,186 @@
+\documentclass[DIN, pagenumber=false, fontsize=11pt, parskip=half]{scrartcl}
+\usepackage[UTF8]{ctex}  % 中文支持
+% \usepackage{ngerman}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{booktabs}
+
+\usepackage{xcolor} % Required for custom red
+
+\usepackage{geometry} % Custom margins
+
+\usepackage{tocloft} % Modifying the table of contents
+
+% for matlab code
+% bw = blackwhite - optimized for print, otherwise source is colored
+\usepackage[framed,numbered,bw]{mcode}
+\usepackage[most]{tcolorbox}
+% for other code
+%\usepackage{listings}
+
+\setlength{\parindent}{0em}
+
+% set section in CM
+\setkomafont{section}{\normalfont\bfseries\Large}
+
+\newcommand{\mytitle}[1]{{\noindent\Large\textbf{#1}}}
+\newcommand{\mysection}[1]{\textbf{\section*{#1}}}
+\newcommand{\mysubsection}[2]{\romannumeral #1) #2}
+
+\newtcolorbox{parchmentquote}{
+    enhanced,
+    colback=orange!5!white,   % 浅米黄色背景
+    colframe=orange!50!black,
+    boxrule=0.5pt,
+    arc=2pt,                  % 细微圆角
+    boxsep=5pt,
+    before skip=10pt,
+    after skip=10pt,
+    fontupper=\itshape,
+    borderline west={2pt}{0pt}{orange!80!black} % 加厚的左装饰线
+}
+%===================================
+\begin{document}
+
+\noindent\textbf{课后总结} \hfill \textbf{online course}\\
+primary school \hfill Liu\\
+
+\mytitle{长方体与正方体 \hfill \today}
+\newline
+\begin{parchmentquote}
+    熟练掌握长方体、正方体的表面积与体积计算公式。
+  正方体是特殊的长方体。
+
+\end{parchmentquote}
+
+
+%===================================
+\section{简单认识长方体与正方体}
+\begin{tikzpicture}[scale=1]
+
+% 前面矩形
+\draw (0,0) rectangle (4,3);
+
+% 后面矩形（平移）
+\draw (1.5,1.2) rectangle (5.5,4.2);
+
+% 连接对应顶点
+\draw (0,0)--(1.5,1.2);
+\draw (4,0)--(5.5,1.2);
+\draw (4,3)--(5.5,4.2);
+\draw (0,3)--(1.5,4.2);
+
+% 顶点标记
+% \node[below left] at (0,0) {$A$};
+% \node[below right] at (4,0) {$B$};
+% \node[above right] at (4,3) {$C$};
+% \node[above left] at (0,3) {$D$};
+
+% \node[below left] at (1.5,1.2) {$E$};
+% \node[below right] at (5.5,1.2) {$F$};
+% \node[above right] at (5.5,4.2) {$G$};
+% \node[above left] at (1.5,4.2) {$H$};
+\node at (2.3,-0.5) {长方体};
+
+\end{tikzpicture}
+\quad \quad
+\begin{tikzpicture}[scale=1.05]
+
+% 前面正方形
+\draw (0,0) rectangle (3,3);
+
+% 后面正方形（平移）
+\draw (1.2,1.2) rectangle (4.2,4.2);
+
+% 连接对应顶点
+\draw (0,0)--(1.2,1.2);
+\draw (3,0)--(4.2,1.2);
+\draw (3,3)--(4.2,4.2);
+\draw (0,3)--(1.2,4.2);
+
+% 顶点标记
+% \node[below left] at (0,0) {$A$};
+% \node[below right] at (3,0) {$B$};
+% \node[above right] at (3,3) {$C$};
+% \node[above left] at (0,3) {$D$};
+
+% \node[left] at (1.2,1.2) {$E$};
+% \node[right] at (4.2,1.2) {$F$};
+% \node[above right] at (4.2,4.2) {$G$};
+% \node[above left] at (1.2,4.2) {$H$};
+\node at (2.1,-0.5) {正方体};
+\end{tikzpicture}
+\section{长方体与正方体的性质}
+
+\subsection*{一、长方体的性质}
+
+设长方体的长、宽、高分别为 $a,b,c$。
+
+\begin{enumerate}
+    \item 有 $6$ 个面，且每个面都是长方形；
+    \item 相对的面互相平行且全等；
+    \item 有 $12$ 条棱；
+    \item 相对的棱平行且相等；
+    \item 有 $8$ 个顶点；
+    \item 每个顶点处有三条棱互相垂直；
+    \item 体对角线相等，并且交于同一点；
+    \item 体积公式：
+    \[
+    V=abc
+    \]
+    \item 表面积公式：
+    \[
+    S=2(ab+bc+ac)
+    \]
+    % \item 体对角线长度：
+    % \[
+    % d=\sqrt{a^2+b^2+c^2}
+    % \]
+\end{enumerate}
+
+\bigskip
+
+\subsection*{二、正方体的性质}
+
+设正方体棱长为 $a$。
+
+\begin{enumerate}
+    \item 有 $6$ 个完全相同的正方形面；
+    \item 有 $12$ 条棱，且所有棱长都相等；
+    \item 有 $8$ 个顶点；
+    \item 每个面都是正方形；
+    \item 每个顶点处三条棱两两垂直；
+    \item 所有面对角线相等；
+    \item 所有体对角线相等；
+    \item 体积公式：
+    \[
+    V=a^3
+    \]
+    \item 表面积公式：
+    \[
+    S=6a^2
+    \]
+    % \item 面对角线长度：
+    % \[
+    % d_{\text{面}}=a\sqrt{2}
+    % \]
+    % \item 体对角线长度：
+    % \[
+    % d_{\text{体}}=a\sqrt{3}
+    % \]
+\end{enumerate}
+
+\bigskip
+\section{练习题}
+\begin{enumerate}
+    \item 已知一个长方体的长为 $5$ cm，宽为 $3$ cm，高为 $2$ cm，求它的体积和表面积。
+    \item 一个正方体的棱长为 $0.15$ cm，求它的体积和表面积。
+    \item 如果一个长方体的体积是 $60 cm^3$，且长、宽分别是 $5$ cm和 $4$ cm，那么这个长方体的表面积是多少？
+    \item 已知一个正方体的表面积是 $9.6 cm^2$，求它的棱长和体积。
+    \item 一个长方体的长是$2.4cm$,宽是长的$\frac{1}{2}$，高是宽的$\frac{3}{4}$，求它的体积。
+\end{enumerate}     
+
+\end{document}

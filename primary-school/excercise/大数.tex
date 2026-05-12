@@ -1,0 +1,77 @@
+\documentclass[DIN, pagenumber=false, fontsize=11pt, parskip=half]{scrartcl}
+\usepackage[UTF8]{ctex}  % 中文支持
+% \usepackage{ngerman}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{graphicx}
+
+\usepackage{xcolor} % Required for custom red
+
+\usepackage{geometry} % Custom margins
+
+\usepackage{tocloft} % Modifying the table of contents
+
+% for matlab code
+% bw = blackwhite - optimized for print, otherwise source is colored
+\usepackage[framed,numbered,bw]{mcode}
+\usepackage[most]{tcolorbox}
+% for other code
+%\usepackage{listings}
+
+\setlength{\parindent}{0em}
+
+% set section in CM
+\setkomafont{section}{\normalfont\bfseries\Large}
+
+\newcommand{\mytitle}[1]{{\noindent\Large\textbf{#1}}}
+\newcommand{\mysection}[1]{\textbf{\section*{#1}}}
+\newcommand{\mysubsection}[2]{\romannumeral #1) #2}
+
+\newtcolorbox{parchmentquote}{
+    enhanced,
+    colback=orange!5!white,   % 浅米黄色背景
+    colframe=orange!50!black,
+    boxrule=0.5pt,
+    arc=2pt,                  % 细微圆角
+    boxsep=5pt,
+    before skip=10pt,
+    after skip=10pt,
+    fontupper=\itshape,
+    borderline west={2pt}{0pt}{orange!80!black} % 加厚的左装饰线
+}
+%===================================
+\begin{document}
+
+\noindent\textbf{课后总结} \hfill \textbf{online course}\\
+primary school \hfill Liu\\
+
+\mytitle{大数认识 \hfill \today}
+\newline
+\begin{parchmentquote}
+    个(一)、十、百、千、万、十万、百万、千万、亿都是计数单位。\newline
+    中间有零的读法要熟练
+
+\end{parchmentquote}
+
+
+%===================================
+\section{读与写}
+
+\subsection{能读出下面数}
+45000000 \;\;\;\; 5805800\;\;\;\; 5800580 \newline
+20260000 \;\;\;\;  2000026\;\;\;\;932159216
+\subsection{能写出下面数}
+五百三十万零八十一\newline
+五亿六千三百七十九万八千一百四十六\newline
+二千万零二十六万\newline
+一千零八万零二十\newline
+\section{比较大小}
+从小到大排序 \newline
+20300040
+3025333
+3015000
+231100
+2030000
+
+\end{document}
