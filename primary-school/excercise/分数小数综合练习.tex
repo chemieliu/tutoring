@@ -1,0 +1,90 @@
+\documentclass[DIN, pagenumber=false, fontsize=11pt, parskip=half]{scrartcl}
+\usepackage[UTF8]{ctex}  % 中文支持
+% \usepackage{ngerman}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{tasks}
+\usepackage{xcolor} % Required for custom red
+
+\usepackage{geometry} % Custom margins
+
+\usepackage{tocloft} % Modifying the table of contents
+
+% for matlab code
+% bw = blackwhite - optimized for print, otherwise source is colored
+\usepackage[framed,numbered,bw]{mcode}
+\usepackage[most]{tcolorbox}
+% for other code
+%\usepackage{listings}
+
+\setlength{\parindent}{0em}
+
+% set section in CM
+\setkomafont{section}{\normalfont\bfseries\Large}
+
+\newcommand{\mytitle}[1]{{\noindent\Large\textbf{#1}}}
+\newcommand{\mysection}[1]{\textbf{\section*{#1}}}
+\newcommand{\mysubsection}[2]{\romannumeral #1) #2}
+
+\newtcolorbox{parchmentquote}{
+    enhanced,
+    colback=orange!5!white,   % 浅米黄色背景
+    colframe=orange!50!black,
+    boxrule=0.5pt,
+    arc=2pt,                  % 细微圆角
+    boxsep=5pt,
+    before skip=10pt,
+    after skip=10pt,
+    fontupper=\itshape,
+    borderline west={2pt}{0pt}{orange!80!black} % 加厚的左装饰线
+}
+%===================================
+\begin{document}
+
+\noindent\textbf{课后练习} \hfill \textbf{online course}\\
+primary school \hfill Liu\\
+
+\mytitle{计算综合练习 \hfill \today}
+\newline
+\begin{parchmentquote}
+   整数、小数、分数综合练习
+
+\end{parchmentquote}
+
+
+
+   计算下列各题：
+  \begin{tasks}(4)
+      
+        \task[1.]\quad $2.1 + \frac{1}{3}$
+        \task[2.]\quad $5.4 - \frac{2}{5}$
+        \task[3.]\quad $\frac{3}{4} \times 8$
+        \task[4.]\quad $\frac{5}{6} \div 3$
+        \task[5.]\quad $1.5 + \frac{2}{3}$
+        \task[6.]\quad $4.8 - \frac{1}{4}$
+        \task[7.]\quad $\frac{2}{3} \times 0.9$
+        \task[8.]\quad $\frac{5}{8} \div 0.5$
+        \task[9.]\quad $0.75 + \frac{1}{5}$
+        \task[10.]\quad $1.2 - \frac{3}{10}$
+        \task[11.]\quad $\frac{4}{5} \times 0.6$
+        \task[12.]\quad $\frac{7}{10} \div 0.2$
+        \task[13.]\quad $\frac{1}{2} + 0.25$
+        \task[14.]\quad $0.8 - \frac{1}{4}$  
+        \task[15.]\quad $\frac{3}{4} \times 0.5$
+        \task[16.]\quad $\frac{5}{6} \div 0.25$
+        \end{tasks}
+ 应用题
+ \begin{enumerate}
+     \item 小明有 $2.5$ 米绳子，剪掉 $\frac{1}{2}$ 米后，还剩多少米绳子？
+     \item 一块蛋糕重 $0.8$ 千克，吃掉 $\frac{3}{4}$ 后，还剩多少千克蛋糕？
+     \item 一辆车每小时行驶 $60$ 公里，行驶了 $\frac{1}{3}$ 小时，行驶了多少公里？
+     \item 小红有 $1.2$ 升牛奶，喝掉 $\frac{1}{4}$ 升后，还剩多少升牛奶？
+     \item 一根绳子长 $3.6$ 米，剪掉 $\frac{2}{5}$ 后，还剩多少米绳子？
+     \item 一块蛋糕重 $0.9$ 千克，吃掉 $\frac{5}{6}$ 后，还剩多少千克蛋糕？
+     \end{enumerate}
+
+\end{document}

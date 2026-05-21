@@ -1,0 +1,98 @@
+\documentclass[DIN, pagenumber=false, fontsize=11pt, parskip=half]{scrartcl}
+\usepackage[UTF8]{ctex}  % 中文支持
+% \usepackage{ngerman}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{tasks}
+\usepackage{xcolor} % Required for custom red
+
+\usepackage{geometry} % Custom margins
+
+\usepackage{tocloft} % Modifying the table of contents
+
+% for matlab code
+% bw = blackwhite - optimized for print, otherwise source is colored
+\usepackage[framed,numbered,bw]{mcode}
+\usepackage[most]{tcolorbox}
+% for other code
+%\usepackage{listings}
+
+\setlength{\parindent}{0em}
+
+% set section in CM
+\setkomafont{section}{\normalfont\bfseries\Large}
+
+\newcommand{\mytitle}[1]{{\noindent\Large\textbf{#1}}}
+\newcommand{\mysection}[1]{\textbf{\section*{#1}}}
+\newcommand{\mysubsection}[2]{\romannumeral #1) #2}
+
+\newtcolorbox{parchmentquote}{
+    enhanced,
+    colback=orange!5!white,   % 浅米黄色背景
+    colframe=orange!50!black,
+    boxrule=0.5pt,
+    arc=2pt,                  % 细微圆角
+    boxsep=5pt,
+    before skip=10pt,
+    after skip=10pt,
+    fontupper=\itshape,
+    borderline west={2pt}{0pt}{orange!80!black} % 加厚的左装饰线
+}
+%===================================
+\begin{document}
+
+\noindent\textbf{课后练习} \hfill \textbf{online course}\\
+primary school \hfill Liu\\
+
+\mytitle{比 \hfill \today}
+\newline
+\begin{parchmentquote}
+   本节课主要需要比的知识。
+   比与分数、除法可以互相转换。
+   如:$a:b =\frac{a}{b} $，\newline
+    比的基本性质：比的前项、后项同时乘以或除以同一个数，所得的比与原来的比相等。
+
+\end{parchmentquote}
+
+\begin{enumerate}
+    \item 把下列比化成最简比：
+    \begin{tasks}(4)
+        \task $12:16$
+        \task $18:24$
+        \task $25:15$
+        \task $9:12$
+    \end{tasks}
+
+    \item 把下列分数化成比：
+    \begin{tasks}(4)    
+        \task $\frac{3}{4}$
+        \task $\frac{5}{6}$
+        \task $\frac{2}{5}$
+        \task $\frac{7}{8}$
+    \end{tasks}
+    \item 把下列比化成除法算式：
+    \begin{tasks}(4)
+        \task $3:4$
+        \task $5:6$ 
+        \task $2:5$
+        \task $7:8$
+    \end{tasks}
+    \item 把下列除法算式化成比：
+    \begin{tasks}(4)
+        \task $3\div 4$     
+        \task $5\div 6$
+        \task $2\div 5$
+        \task $7\div 8$
+    \end{tasks}
+    \item $\frac{6}{()} = 3:4=21:()$
+    \item $\frac{()}{5} = 0.4=() : 25$
+    \item 已知盐水中盐与水的质量比是 $1:4$，如果盐水的质量是 $500$ 克，那么盐的质量是多少克？水的质量是多少克？
+    \item 已知一批货物中，木材与铁的质量比是 $3:2$，如果木材的质量是 $600$ 千克，那么铁的质量是多少千克？这批货物的总质量是多少千克？
+      
+\end{enumerate}
+
+\end{document}
