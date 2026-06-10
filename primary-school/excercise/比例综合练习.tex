@@ -1,0 +1,123 @@
+\documentclass[DIN, pagenumber=false, fontsize=11pt, parskip=half]{scrartcl}
+\usepackage[UTF8]{ctex}  % 中文支持
+% \usepackage{ngerman}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{tasks}
+\usepackage{xcolor} % Required for custom red
+\usepackage{amsmath,amssymb}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{geometry} % Custom margins
+
+\usepackage{tocloft} % Modifying the table of contents
+
+% for matlab code
+% bw = blackwhite - optimized for print, otherwise source is colored
+\usepackage[framed,numbered,bw]{mcode}
+\usepackage[most]{tcolorbox}
+% for other code
+%\usepackage{listings}
+
+\setlength{\parindent}{0em}
+
+% set section in CM
+\setkomafont{section}{\normalfont\bfseries\Large}
+
+\newcommand{\mytitle}[1]{{\noindent\Large\textbf{#1}}}
+\newcommand{\mysection}[1]{\textbf{\section*{#1}}}
+\newcommand{\mysubsection}[2]{\romannumeral #1) #2}
+
+\newtcolorbox{parchmentquote}{
+    enhanced,
+    colback=orange!5!white,   % 浅米黄色背景
+    colframe=orange!50!black,
+    boxrule=0.5pt,
+    arc=2pt,                  % 细微圆角
+    boxsep=5pt,
+    before skip=10pt,
+    after skip=10pt,
+    fontupper=\itshape,
+    borderline west={2pt}{0pt}{orange!80!black} % 加厚的左装饰线
+}
+%===================================
+\begin{document}
+\newcommand{\blank}[1][3em]{\underline{\hspace{#1}}}
+\noindent\textbf{课后练习} \hfill \textbf{online course}\\
+primary school \hfill Liu\\
+
+\mytitle{分数练习 \hfill \today}
+\newline
+\begin{parchmentquote}
+    比例是分数的综合应用，难度比较大
+
+
+\end{parchmentquote}
+\begin{enumerate}
+  \item 下列各比，能与 \(6 : 5\) 组成比例的是（  \quad   ）。
+
+A. \(\frac{1}{3} : \frac{2}{5}\) \quad
+B. \(\frac{1}{5} : \frac{1}{6}\) \quad
+C. \(\frac{1}{6} : \frac{1}{5}\) \quad
+D. \(\frac{2}{5} : \frac{3}{2}\)
+\item 一款手表的零件长 \(0.5\) 毫米，在设计图纸上的长度是 \(10\) 厘米，图纸的比例尺是（  \quad   ）。
+
+A. \(1 : 20\) \quad
+B. \(20 : 1\) \quad
+C. \(1 : 200\) \quad
+D. \(200 : 1\)
+\item 照片上悦悦的身高是 \(4\) cm，她的实际身高是 \(1.6\) m。这张照片的比例尺是（  \quad   ）。
+
+A. \(1 : 0.4\) \quad
+B. \(1 : 40\) \quad
+C. \(0.4 : 1\) \quad
+D. \(40 : 1\)
+\item 一个底边是 \(8\) 厘米、高是 \(4\) 厘米的平行四边形，按 \(2 : 1\) 的比放大后的平行四边形面积与原来的平行四边形面积之比是（  \quad   ）。
+
+A. \(1 : 2\) \quad
+B. \(2 : 1\) \quad
+C. \(1 : 4\) \quad
+D. \(4 : 1\)
+\item 下面不能用比例 “\(3 : 6 = 9 : x\)” 解决的是（  \quad   ）。
+
+A. 将一根圆木锯成 \(3\) 段需要 \(6\) 分钟，照这样算，锯成 \(9\) 段需要 \(x\) 分钟 \\
+B. 一辆汽车 \(3\) 分钟行驶 \(6\) 千米，照这样算，\(9\) 分钟可以行驶 \(x\) 千米 \\
+C. \(3\) 支铅笔可以换 \(6\) 块橡皮，照这样算，\(9\) 支铅笔可以换 \(x\) 块橡皮 \\
+D. 长 \(6\) 厘米、宽 \(3\) 厘米的长方形按一定的比画出新图后，长是 \(x\) 厘米，宽是 \(9\) 厘米
+\item 下面每个选项中的两个比不能组成比例的是（  \quad   ）。
+
+A. \(4 : 3\) 和 \(60 : 45\) \quad
+B. \(1 : \frac{1}{5}\) 和 \(\frac{5}{8} : \frac{1}{8}\) \quad
+C. \(1 : 1.2\) 和 \(3.5 : 4.2\) \quad
+D. \(20 : 10\) 和 \(0.5 : 1\) 
+\item\[
+\begin{array}{|c|c|c|c|c|}
+\hline
+\text{甜度} & \text{无糖} & \text{三分糖} & \text{五分糖} & \text{七分糖} \\
+\hline
+\text{糖 / 克} & 0 & 2.4 & 4 & 5.6 \\
+\hline
+\text{奶茶 / 毫升} & 100 & 100 & 100 & 100 \\
+\hline
+\end{array}
+\]
+
+(1) 悦悦准备按上面的配比表配制一杯中杯（500毫升）的五分糖奶茶，她需要准备多少克糖？（用方程解）
+
+\vspace{1cm}
+
+(2) 《中国居民膳食指南（2022）》中指出“每个人每天糖的摄入量不要超过50克”。按照这种膳食指导，一个人每天最多能喝多少毫升三分糖奶茶或多少毫升七分糖奶茶？（得数保留整百数）
+\end{enumerate}
+
+
+
+
+
+
+
+
+\end{document}

@@ -1,0 +1,89 @@
+\documentclass[DIN, pagenumber=false, fontsize=11pt, parskip=half]{scrartcl}
+\usepackage[UTF8]{ctex}  % 中文支持
+% \usepackage{ngerman}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{tasks}
+\usepackage{xcolor} % Required for custom red
+
+\usepackage{geometry} % Custom margins
+
+\usepackage{tocloft} % Modifying the table of contents
+
+% for matlab code
+% bw = blackwhite - optimized for print, otherwise source is colored
+\usepackage[framed,numbered,bw]{mcode}
+\usepackage[most]{tcolorbox}
+% for other code
+%\usepackage{listings}
+
+\setlength{\parindent}{0em}
+
+% set section in CM
+\setkomafont{section}{\normalfont\bfseries\Large}
+
+\newcommand{\mytitle}[1]{{\noindent\Large\textbf{#1}}}
+\newcommand{\mysection}[1]{\textbf{\section*{#1}}}
+\newcommand{\mysubsection}[2]{\romannumeral #1) #2}
+
+\newtcolorbox{parchmentquote}{
+    enhanced,
+    colback=orange!5!white,   % 浅米黄色背景
+    colframe=orange!50!black,
+    boxrule=0.5pt,
+    arc=2pt,                  % 细微圆角
+    boxsep=5pt,
+    before skip=10pt,
+    after skip=10pt,
+    fontupper=\itshape,
+    borderline west={2pt}{0pt}{orange!80!black} % 加厚的左装饰线
+}
+%===================================
+\begin{document}
+
+\noindent\textbf{课后练习} \hfill \textbf{online course}\\
+primary school \hfill Liu\\
+
+\mytitle{分数练习 \hfill \today}
+\newline
+\begin{parchmentquote}
+    本节课主要复习分数的性质。
+    从基础开始，分数与小数的转换，分数加减尤其异分母加减。
+
+
+\end{parchmentquote}
+
+\begin{enumerate}
+    \item 把下列分数转换成小数：
+          \begin{tasks}(4)
+
+              \task $\frac{3}{4}$
+              \task $\frac{7}{8}$
+              \task $\frac{2}{5}$
+              \task $\frac{17}{16}$
+
+          \end{tasks}
+
+    \item 把下列小数转成分数（最简分数）：
+          \begin{tasks}(4)
+              \task $0.125$
+              \task $ 0.23$
+              \task $3.35$
+              \task $12.06$
+          \end{tasks}
+  \item 分数加减（结果最简分数）：
+          \begin{tasks}(4)
+               \task $\frac{3}{4}$ +$\frac{7}{2}$ =
+              \task $\frac{7}{6}$ +$\frac{11}{8}$ =
+              \task $\frac{11}{24}$ -$\frac{5}{36}$ =
+              \task $\frac{13}{15}$ -$\frac{11}{18}$ =
+            
+              
+          \end{tasks}
+\end{enumerate}
+
+\end{document}

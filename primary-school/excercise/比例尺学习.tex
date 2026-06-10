@@ -1,0 +1,288 @@
+\documentclass[DIN, pagenumber=false, fontsize=11pt, parskip=half]{scrartcl}
+\usepackage[UTF8]{ctex}  % 中文支持
+% \usepackage{ngerman}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{tasks}
+\usepackage{xcolor} % Required for custom red
+
+\usepackage{geometry} % Custom margins
+
+\usepackage{tocloft} % Modifying the table of contents
+
+% for matlab code
+% bw = blackwhite - optimized for print, otherwise source is colored
+\usepackage[framed,numbered,bw]{mcode}
+\usepackage[most]{tcolorbox}
+% for other code
+%\usepackage{listings}
+
+\setlength{\parindent}{0em}
+
+% set section in CM
+\setkomafont{section}{\normalfont\bfseries\Large}
+
+\newcommand{\mytitle}[1]{{\noindent\Large\textbf{#1}}}
+\newcommand{\mysection}[1]{\textbf{\section*{#1}}}
+\newcommand{\mysubsection}[2]{\romannumeral #1) #2}
+
+\newtcolorbox{parchmentquote}{
+    enhanced,
+    colback=orange!5!white,   % 浅米黄色背景
+    colframe=orange!50!black,
+    boxrule=0.5pt,
+    arc=2pt,                  % 细微圆角
+    boxsep=5pt,
+    before skip=10pt,
+    after skip=10pt,
+    fontupper=\itshape,
+    borderline west={2pt}{0pt}{orange!80!black} % 加厚的左装饰线
+}
+%===================================
+\begin{document}
+
+\noindent\textbf{课后练习} \hfill \textbf{online course}\\
+primary school \hfill Liu\\
+
+\mytitle{比例尺 \hfill \today}
+\newline
+\begin{parchmentquote}
+    本节课主要复习比例尺的相关知识。
+    从基础开始，学习比例尺的定义、应用以及相关的计算问题。
+
+
+\end{parchmentquote}
+
+\section{什么是比例尺？}
+
+生活中，真实物体太大（或太小），不能直接画出来，
+所以需要按照相同的倍数缩小（或放大）。
+
+例如：
+
+\begin{itemize}
+    \item 地图
+    \item 小区平面图
+    \item 房屋设计图
+    \item 教室座位图
+\end{itemize}
+
+\textbf{比例尺就是：}
+
+\[
+\text{图上距离} : \text{实际距离}
+\]
+
+例如：
+
+图上 $1$ 厘米表示实际 $100$ 厘米，
+
+比例尺写成：
+
+\[
+1:100
+\]
+
+读作：
+
+\textbf{比例尺一比一百。}
+
+\section{为什么需要比例尺？}
+
+例如：
+
+黑板长 $4$ 米，
+
+如果直接画，纸放不下。
+
+规定：
+
+\[
+1\text{ cm 表示 }1\text{ m}
+\]
+
+那么：
+
+\[
+4\text{ m}\rightarrow 4\text{ cm}
+\]
+
+这就是按同样倍数缩小。
+
+\section{比例尺的计算}
+
+\subsection{求实际距离}
+
+已知：
+
+\begin{itemize}
+    \item 比例尺：$1:50000$
+    \item 图上距离：$3$ cm
+\end{itemize}
+
+计算：
+
+\[
+3\times 50000=150000\text{ cm}
+\]
+
+换算：
+
+\[
+150000\text{ cm}
+=
+1500\text{ m}
+=
+1.5\text{ km}
+\]
+
+\textbf{口诀：}
+
+\[
+\boxed{\text{求实际：乘分母}}
+\]
+
+\subsection{求图上距离}
+
+已知：
+
+\begin{itemize}
+    \item 实际距离：$800$ m
+    \item 比例尺：$1:40000$
+\end{itemize}
+
+先统一单位：
+
+\[
+800\text{ m}=80000\text{ cm}
+\]
+
+计算：
+
+\[
+80000\div40000=2\text{ cm}
+\]
+
+\textbf{口诀：}
+
+\[
+\boxed{\text{求图上：实际除分母}}
+\]
+
+\subsection{求比例尺}
+
+已知：
+
+\begin{itemize}
+    \item 图上距离：$5$ cm
+    \item 实际距离：$100$ m
+\end{itemize}
+
+先统一单位：
+
+\[
+100\text{ m}=10000\text{ cm}
+\]
+
+写成比：
+
+\[
+5:10000
+\]
+
+化简：
+
+\[
+1:2000
+\]
+
+\textbf{口诀：}
+
+\[
+\boxed{\text{求比例尺：先同单位，再化简}}
+\]
+
+\section{练习}
+
+\begin{enumerate}
+    \item 比例尺为 $1:1000$，图上距离为 $5$ cm，
+    求实际距离。
+
+    \item 实际距离为 $300$ m，比例尺为 $1:10000$，
+    求图上距离。
+
+    \item 图上距离为 $4$ cm，实际距离为 $80$ m，
+    求比例尺。
+\end{enumerate}
+
+\section{容易出错的地方}
+
+\begin{enumerate}
+    \item 单位必须统一。
+
+    例如：
+
+    \[
+    2\text{ m}=200\text{ cm}
+    \]
+
+    所以比例尺是：
+
+    \[
+    1:200
+    \]
+
+    不能直接写成：
+
+    \[
+    1:2
+    \]
+
+    \item 比例尺不能带单位。
+
+    错误：
+
+    \[
+    1\text{ cm}:100\text{ cm}
+    \]
+
+    正确：
+
+    \[
+    1:100
+    \]
+
+    \item 比例尺前项通常化成 $1$。
+\end{enumerate}
+
+\section{课堂活动}
+
+请画出自己的房间平面图。
+
+规定：
+
+\[
+1\text{ cm 表示 }50\text{ cm}
+\]
+
+测量：
+
+\begin{itemize}
+    \item 床的长度
+    \item 书桌长度
+    \item 门和窗的位置
+\end{itemize}
+
+最后画出房间平面图。
+
+体会：
+
+\[
+\boxed{\text{比例尺就是按相同倍数缩小}}
+\]
+
+\end{document}
